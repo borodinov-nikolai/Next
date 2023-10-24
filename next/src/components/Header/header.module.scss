@@ -1,0 +1,53 @@
+.root {
+  
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        height: 50px;
+        border-bottom: 1px solid rgb(219, 219, 219);
+
+        .burger {
+            display: none;
+          
+           
+        }
+
+        .left_menu {
+            height: 100%;
+            align-items: center;
+            display: flex;
+            gap: 20px;
+
+            .left_menu_item {
+                cursor: pointer;
+            }
+        }
+
+        .right_menu {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+ 
+    @media (max-width: 992px) {
+        .navbar {
+            .left_menu {
+                display: none;
+            }
+        
+            .burger {
+              display: block;
+             
+            }
+          }
+    }
+  
+   
+}
+
+
+

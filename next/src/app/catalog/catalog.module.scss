@@ -1,0 +1,25 @@
+.root {
+     padding: 100px 0;
+
+    .card_holder {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+       
+        
+       
+
+        .card {
+            height: 400px;
+            width: 250px;
+            border: 1px solid rgb(171, 171, 171);
+            .img {
+                img {
+                    height: 200px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
