@@ -1,9 +1,7 @@
-'use client'
-
 import React from 'react'
 import styles from './catalog.module.scss'
-import axios from 'axios'
-import Image from 'next/image'
+import { getProducts } from '@/http/serverApi';
+import ProductCard from '@/components/CatalogPage/ProductCard';
 
 
 
@@ -11,54 +9,50 @@ import Image from 'next/image'
 
 
 
-const Catalog = () => {
-
-const [data, setData] = React.useState<any>()
 
 
-React.useEffect(()=> {
-  const getData = async () => {
+const Catalog: React.FC = async () => {
 
-    const res = await axios.get('https://api.digiseller.ru/api/products/3023584/data', {
-      headers: {
-        Accept: 'application/json'
-      }
-    }
-    
-    );
 
-    setData(res)
-}
+  interface Product {
   
-getData()
-}, [])
+      id: number, 
+      attributes: {
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+        publishedAt: string,
+        url: string,
+        image: {
+          data: [
+            {attributes: {
+              url:string
+            }}
+          ]
+        }
+      }
+  
+    }
+  
+  
 
 
+let products = await getProducts();
 
-//vmprweomnvperwnm
-
-
- 
+console.log(products?.data)
 
   return (
     <div className={styles.root}>
       <div className="container">
    
         <div className={styles.card_holder}>
-            <div className={styles.card}> 
-              <div className={styles.img} >
+            {products?.data.map((product:Product)=> {
+              return <div className={styles.card}> 
+            
+              <ProductCard product={product} />
+           </div>
+            } )}
            
-              </div>
-            </div>
-            <div className={styles.card}>
-              
-            </div>
-            <div className={styles.card}>
-              
-            </div>
-            <div className={styles.card}>
-              
-            </div>
         </div>
       </div>
 

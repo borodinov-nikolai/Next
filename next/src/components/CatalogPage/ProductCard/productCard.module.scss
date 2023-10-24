@@ -1,0 +1,32 @@
+
+
+
+.root {
+    height: 100%;
+    width: 100%;
+
+    .image {
+       
+        img {
+            height: 320px;
+            width: 250px;
+        }
+    }
+
+    .name {
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .btn{
+        margin-top: 5px;
+       display: flex;
+       justify-content: center;
+
+       button {
+        font-size: 18px;
+        margin-right: 20px;
+       }
+    }
+}

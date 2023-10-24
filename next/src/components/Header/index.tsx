@@ -11,7 +11,7 @@ const menulist = [{id:1, name:'Главная', href: '/' }, {id:2, name:'Кат
  {id:4, name:'Гарантии', href: '' } , {id:5, name:'Частые вопросы', href: '/' }]
 
 
-console.log('asfjas')
+
 
   return (
     <div className={styles.root}>
