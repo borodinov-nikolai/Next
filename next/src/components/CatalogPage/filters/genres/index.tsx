@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './genres.module.scss'
 import { getGenres } from '@/http/serverApi'
-import GenreChange from './genreChange'
+import ChangeGenre from './changeGenre'
 
 const Genres = async () => {
 
@@ -15,9 +15,9 @@ const Genres = async () => {
 
     <ul className={styles.list} >
       {genres?.map((genre: {id: number, attributes: {name:string}})=> {
-        return  (<GenreChange key={genre.id} >
+        return  (<ChangeGenre key={genre.id} >
                    {genre.attributes.name}
-         </GenreChange>)
+         </ChangeGenre>)
       })}
    
      

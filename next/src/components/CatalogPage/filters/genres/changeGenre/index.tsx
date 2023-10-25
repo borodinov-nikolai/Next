@@ -5,7 +5,7 @@ import React from 'react'
 
 
 
-const GenreChange = ({ children}: {children:React.ReactNode}) => {
+const ChangeGenre = ({ children}: {children:React.ReactNode}) => {
   const dispatch = useAppDispatch()
   
 
@@ -14,4 +14,4 @@ const GenreChange = ({ children}: {children:React.ReactNode}) => {
   )
 }
 
-export default GenreChange
+export default ChangeGenre
