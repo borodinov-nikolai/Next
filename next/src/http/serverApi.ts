@@ -25,3 +25,13 @@ export const getGenres = async()=> {
         console.error(e)
     }
 }
+
+
+export const getPlatforms = async ()=> {
+    try {
+        const res = await $cmsAPI.get('/platforms')
+        return res.data.data
+    } catch(e) {
+        console.error(e)
+    }
+}

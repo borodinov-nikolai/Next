@@ -1,5 +1,5 @@
 'use client'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
+import { useAppDispatch} from '@/redux_toolkit/hooks'
 import { setGenre} from '@/redux_toolkit/slices/filtersSlice'
 import React from 'react'
 

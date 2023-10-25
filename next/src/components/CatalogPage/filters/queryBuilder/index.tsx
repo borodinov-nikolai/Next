@@ -18,16 +18,16 @@ React.useEffect(()=>{
                 genres: {
                     name: filters.genre || undefined
                     },
-                // platform: {
-                //     name: 'Xbox Series X'
-                // }
+                platform: {
+                    name: filters.platform || undefined
+                }
                 }
             }
         )
 
       
 
-    router.replace(`?${query}&platform[name]=Xbox Series X`)
+    router.replace(`?${query}`)
     
 
 

@@ -5,12 +5,14 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 interface FiltersState {
-    genre: string
+    genre: string,
+    platform: string
 }
 
 
 const initialState: FiltersState = {
-    genre: ''
+    genre: '',
+    platform: ''
 }
 
 
@@ -20,10 +22,13 @@ export const filtersSlice = createSlice({
     reducers: {
        setGenre: (state, action: PayloadAction<string>)=> {
         state.genre = action.payload
-        }
+        },
+       setPlatform: (state, action: PayloadAction<string>)=> {
+        state.platform = action.payload
+        },
     }
 })
 
 
-export const { setGenre } = filtersSlice.actions
+export const { setGenre, setPlatform } = filtersSlice.actions
 export default filtersSlice.reducer
