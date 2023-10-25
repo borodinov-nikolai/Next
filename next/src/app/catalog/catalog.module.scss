@@ -1,25 +1,34 @@
 .root {
-     padding: 100px 0;
 
-    .card_holder {
+   
+      display: grid;
+      grid-template-columns: max-content 1fr ;
+      grid-template-rows: auto auto auto;
+
+     .platforms {
+        display: grid;
+      grid-column: 1/3;
+      grid-row: 1/2;
+     }
+
+     .genres {
+
+
+     }
+
+    .product_cards {
+        padding: 50px 20px;
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: max-content;
+        grid-auto-rows: max-content;
+        grid-auto-flow: column;
+        gap: 10px;
         justify-items: center;
        
         
        
 
-        .card {
-            height: 400px;
-            width: 250px;
-            border: 1px solid rgb(171, 171, 171);
-            .img {
-                img {
-                    height: 200px;
-                    width: auto;
-                }
-            }
-        }
+        
     }
 }

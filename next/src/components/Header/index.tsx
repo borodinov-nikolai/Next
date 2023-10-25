@@ -15,7 +15,7 @@ const menulist = [{id:1, name:'Главная', href: '/' }, {id:2, name:'Кат
 
   return (
     <div className={styles.root}>
-      <div className='container' >
+  
     <div className={styles.navbar} >
 
      <div className={styles.burger}>
@@ -38,7 +38,7 @@ const menulist = [{id:1, name:'Главная', href: '/' }, {id:2, name:'Кат
     </div>
 
     </div>
-    </div>
+
   )
 }
 

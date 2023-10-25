@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product",
+    "displayName": "Product",
     "description": ""
   },
   "options": {
@@ -24,9 +24,12 @@
         "images"
       ]
     },
-    "url": {
+    "buyURL": {
       "type": "string",
       "required": true
+    },
+    "productID": {
+      "type": "string"
     }
   }
 }

@@ -1,11 +1,11 @@
-import { $api_Server_CMS } from "@/axios/serverConfig";
-import axios from "axios";
+import { $cmsAPI } from "@/axios/config";
+
 
 
 
  export const getProducts = async ()=> {
     try {
-        const {data} = await $api_Server_CMS.get('/products?populate=*')
+        const {data} = await $cmsAPI.get('/products?populate=*')
      
         return data
 
@@ -13,3 +13,5 @@ import axios from "axios";
         console.error(e)
     }
 }
+
+

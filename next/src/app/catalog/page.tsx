@@ -2,6 +2,9 @@ import React from 'react'
 import styles from './catalog.module.scss'
 import { getProducts } from '@/http/serverApi';
 import ProductCard from '@/components/CatalogPage/ProductCard';
+import Platforms from '@/components/CatalogPage/filters/platforms';
+import Genres from '@/components/CatalogPage/filters/genres';
+
 
 
 
@@ -19,10 +22,11 @@ const Catalog: React.FC = async () => {
       id: number, 
       attributes: {
         name: string,
+        productID: string,
         createdAt: string,
         updatedAt: string,
         publishedAt: string,
-        url: string,
+        buyURL: string,
         image: {
           data: [
             {attributes: {
@@ -43,11 +47,12 @@ console.log(products?.data)
 
   return (
     <div className={styles.root}>
-      <div className="container">
-   
-        <div className={styles.card_holder}>
+     
+          <div className={styles.platforms} ><Platforms/></div>
+          <div className={styles.genres}><Genres/></div>
+        <div className={styles.product_cards}>
             {products?.data.map((product:Product)=> {
-              return <div className={styles.card}> 
+              return <div key={product.id} className={styles.card}> 
             
               <ProductCard product={product} />
            </div>
@@ -58,7 +63,7 @@ console.log(products?.data)
 
     
       
-    </div>
+   
   )
 }
 
