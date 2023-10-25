@@ -5,6 +5,7 @@ import '../styles/global.scss'
 import StyledComponentsRegistry from '@/antDesign/AntdRegistry'
 import theme from '@/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
+import ReduxProvider from '@/redux_toolkit/reduxProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,10 +24,14 @@ export default function RootLayout({
       
       <body className={inter.className}>
         <ConfigProvider theme={theme} >
+        <StyledComponentsRegistry>
+          <ReduxProvider>
         <div className="container">
         <Header/>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          {children}
         </div>
+          </ReduxProvider>
+          </StyledComponentsRegistry>
         </ConfigProvider>
         </body>
     </html>
