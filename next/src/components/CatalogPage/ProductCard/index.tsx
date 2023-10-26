@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './productCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getProductInfo } from '@/http/digisellerAPI'
 
 
 interface Props {
