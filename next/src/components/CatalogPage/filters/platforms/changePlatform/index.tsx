@@ -1,14 +1,15 @@
 'use client'
-import { useAppDispatch } from '@/redux_toolkit/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
 import { setPlatform } from '@/redux_toolkit/slices/filtersSlice'
 import React from 'react'
 
 
 
-const ChangePlatform = ({children}: {children: React.ReactNode}) => {
+const ChangePlatform = ({children}: {children: string}) => {
+  const {platform} = useAppSelector((state)=> state.filters)
   const dispatch = useAppDispatch()
   return (
-    <li onClick={()=>dispatch(setPlatform(String(children)))}>{children}</li>
+    <li style={platform === children ? {background:'rgb(255, 255, 255)', color: 'black', borderRadius: '10px' }: undefined} onClick={()=>dispatch(setPlatform(children))}>{children}</li>
   )
 }
 

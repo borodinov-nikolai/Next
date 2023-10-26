@@ -1,10 +1,11 @@
-import React from 'react'
-import styles from './catalog.module.scss'
+import React from 'react';
+import styles from './catalog.module.scss';
 import { getProducts } from '@/http/serverApi';
 import ProductCard from '@/components/CatalogPage/ProductCard';
 import Platforms from '@/components/CatalogPage/Filters/Platforms';
 import Genres from '@/components/CatalogPage/Filters/Genres';
 import QueryBuilder from '@/components/CatalogPage/Filters/queryBuilder';
+import Search from 'antd/es/input/Search';
 export const dynamic = 'force-dynamic';
 
 
@@ -59,6 +60,7 @@ let products = await getProducts(searchParams);
     <div className={styles.root}>
             <QueryBuilder/>
           <div className={styles.platforms} ><Platforms/></div>
+          <div className={styles.search}><Search/></div>
           <div className={styles.genres}><Genres/></div>
         <div className={styles.product_cards}>
             {products?.data?.map((product:Product)=> {

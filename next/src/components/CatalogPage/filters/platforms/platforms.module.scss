@@ -13,8 +13,17 @@
         gap: 20px;
         
         li {
+            padding: 5px 10px;
             cursor: pointer;
             color: white;
+        }
+
+        li:hover {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border-radius: 10px;
         }
     }
 }
