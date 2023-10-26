@@ -773,6 +773,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::genre.genre'
     >;
+    price: Attribute.Decimal & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

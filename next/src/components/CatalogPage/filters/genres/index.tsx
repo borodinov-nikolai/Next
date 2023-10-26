@@ -3,7 +3,7 @@ import styles from './genres.module.scss'
 import { getGenres } from '@/http/serverApi'
 import ChangeGenre from './changeGenre'
 
-const Genres = async () => {
+const Genres = async ({defaultValue}:{defaultValue: string | undefined}) => {
 
 
   const genres = await getGenres()
@@ -15,7 +15,7 @@ const Genres = async () => {
 
     <ul className={styles.list} >
       {genres?.map((genre: {id: number, attributes: {name:string}})=> {
-        return  (<ChangeGenre key={genre.id} >
+        return  (<ChangeGenre defaultValue={defaultValue} key={genre.id} >
                    {genre.attributes.name}
          </ChangeGenre>)
       })}

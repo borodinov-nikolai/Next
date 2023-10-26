@@ -15,6 +15,7 @@ interface Props {
         updatedAt: string,
         publishedAt: string,
         buyURL: string,
+        price: number
         image: {
           data: [{
             attributes: {
@@ -30,9 +31,7 @@ interface Props {
 const ProductCard: React.FC<Props> = async ({product}) => {
   
  
-  const info = await getProductInfo(product?.attributes.productID)
-  const available = info?.product.is_available
-  const price = info?.product.prices.default.RUB
+
   const image = product?.attributes.image?.data[0].attributes.url
   
   
@@ -42,12 +41,12 @@ const ProductCard: React.FC<Props> = async ({product}) => {
       <div className={styles.image}>
        <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+image
          }
-        width={800} height={800} alt={product?.attributes.name}></Image>
+        width={300} height={300} alt={product?.attributes.name}></Image>
       </div>
       {/* <div  className={styles.name}>{product.attributes.name}</div> */}
-      {available? <div className={styles.btn}>
-       <div className={styles.price} >{price} <span>₽</span></div>
-        </div>: <div>Товар закончился </div> }
+      <div className={styles.btn}>
+       <div className={styles.price} >{product?.attributes.price} <span>₽</span></div>
+        </div>
         </Link>
     </div>
   )

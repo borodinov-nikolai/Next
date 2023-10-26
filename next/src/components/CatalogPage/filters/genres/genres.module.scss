@@ -4,7 +4,7 @@
 .root {
     width: 200px;
     height: 800px;
-    padding: 50px 10px;
+    padding: 0px 10px;
 
     .list {
 
@@ -16,6 +16,7 @@
             cursor: pointer;
             color: white;
             padding: 10px;
+            // background-color: rgb(204, 204, 204);
             background-color: rgb(52, 52, 52);
             border-radius: 10px;
         }
@@ -23,8 +24,10 @@
             cursor: pointer;
             color: white;
             padding: 10px;
-            background-color: rgb(113, 113, 113);
+            background-color: rgb(150 150 150);
             border-radius: 10px;
         }
     }
 }
+
+

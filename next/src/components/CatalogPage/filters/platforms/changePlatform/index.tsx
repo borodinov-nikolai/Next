@@ -5,11 +5,11 @@ import React from 'react'
 
 
 
-const ChangePlatform = ({children}: {children: string}) => {
-  const {platform} = useAppSelector((state)=> state.filters)
+const ChangePlatform = ({ children, defaultValue }: { children: string, defaultValue: string | undefined }) => {
+  const { platform } = useAppSelector((state) => state.filters)
   const dispatch = useAppDispatch()
   return (
-    <li style={platform === children ? {background:'rgb(255, 255, 255)', color: 'black', borderRadius: '10px' }: undefined} onClick={()=>dispatch(setPlatform(children))}>{children}</li>
+    <li style={(platform ? platform : defaultValue) === children ? { background: 'rgb(255, 255, 255)', color: 'black', borderRadius: '10px' } : undefined} onClick={() => dispatch(setPlatform(children))}>{children}</li>
   )
 }
 

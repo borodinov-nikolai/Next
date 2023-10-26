@@ -12,14 +12,36 @@
      }
 
 
+     .search_sort{
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      grid-row: 2;
+      grid-column: 2/3;
+      justify-self: end;
+     }
+
      .search {
-        justify-self: end;
-        grid-row:2;
-        grid-column: 2/3;
+        
         width: 250px;
      }
 
+     .sort {
+
+    
+     }
+
+     .genres_title {
+      font-size: 20px;
+      justify-self: center;
+      align-self: center;
+      grid-row: 2;
+      grid-column: 1/2;
+   }
+
      .genres {
+        
+
         grid-row: 3;
         grid-column: 1/2;
 
@@ -28,7 +50,6 @@
     .product_cards {
         display: grid;
         width: 100%;
-        padding: 50px 0px;
         grid-row: 3;
         grid-column: 2/3;
      

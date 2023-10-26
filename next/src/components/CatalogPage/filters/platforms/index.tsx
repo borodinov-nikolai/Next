@@ -4,14 +4,14 @@ import { getPlatforms } from '@/http/serverApi'
 import ChangePlatform from './changePlatform';
 
 
-const Platforms: React.FC = async () => {
+const Platforms = async ({defaultValue}:{defaultValue:string|undefined}) => {
 
 
 
 
   const platforms = await getPlatforms();
 
-  console.log(platforms)
+
 
   return (
     <div className={styles.root}>
@@ -20,7 +20,7 @@ const Platforms: React.FC = async () => {
 
               {
                 platforms?.map((platform:{id:number, attributes: {name:string}})=> {
-                  return (<ChangePlatform key={platform.id} >
+                  return (<ChangePlatform defaultValue={defaultValue} key={platform.id} >
                   {platform.attributes.name}
                     </ChangePlatform>)
                 

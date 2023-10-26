@@ -1,14 +1,14 @@
 import { $cmsAPI } from "@/axios/config";
-import qs from "qs";
 
 
 
 
- export const getProducts = async (searchParams: {[key:string]:string})=> {
+
+ export const getProducts = async (queryString:any)=> {
     try {
-        const query = qs.stringify(searchParams)
+        
     
-        const res = await $cmsAPI.get(`/products?${query}&populate=*`)
+        const res = await $cmsAPI.get(`/products?${queryString?queryString:'sort=price:asc'}&populate=*`)
      
         return res.data
 

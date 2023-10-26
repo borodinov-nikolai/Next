@@ -42,6 +42,10 @@
       "relation": "manyToMany",
       "target": "api::genre.genre",
       "mappedBy": "products"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
     }
   }
 }

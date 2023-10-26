@@ -1,10 +1,25 @@
 'use client'
 import React from 'react'
+import {Input} from 'antd'
+import { useAppDispatch } from '@/redux_toolkit/hooks'
+import { setSearch } from '@/redux_toolkit/slices/filtersSlice'
+import { useDebounce } from 'usehooks-ts'
 
 
-const Search = () => {
+const Search: React.FC = () => {
+ const [value, setValue] = React.useState<string>('');
+ const dispatch = useAppDispatch();
+ const debouncedValue = useDebounce(value, 700);
+ dispatch(setSearch(debouncedValue));
+
+ 
+
   return (
-    <div><input type="text" /></div>
+ 
+    <Input onChange={(e)=>setValue(e.target.value)} placeholder="поиск"/>
+
+
+   
   )
 }
 
