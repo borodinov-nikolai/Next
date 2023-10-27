@@ -15,13 +15,25 @@
         }
 
         .left_menu {
-            height: 100%;
-            align-items: center;
+            align-items: end;
             display: flex;
             gap: 20px;
 
-            .left_menu_item {
-                cursor: pointer;
+         
+            li {
+                display: flex;
+                align-items: center;
+                height: 48px;
+             
+
+                a {
+                    
+                    cursor: pointer;
+                }
+
+                a:hover>li {
+                    border-top: 2px solid black;
+                }
             }
         }
 

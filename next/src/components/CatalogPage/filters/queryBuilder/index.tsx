@@ -1,8 +1,9 @@
 'use client'
-import { useAppSelector } from '@/redux_toolkit/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import qs from 'qs';
+import { resetFilters } from '@/redux_toolkit/slices/filtersSlice';
 
 
 interface Props {
@@ -20,11 +21,15 @@ defaultValues:{
 
 const QueryBuilder: React.FC<Props> = ({defaultValues}) => {
     const filters = useAppSelector((state)=> state.filters);
-  
+  const dispatch = useAppDispatch()
     const router = useRouter();
 
 
+    React.useEffect(()=> {
 
+        return ()=> {dispatch(resetFilters())}
+
+    },[])
   
 
 

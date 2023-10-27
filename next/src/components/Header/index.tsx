@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './header.module.scss'
 import Offcanvas from './offcanvas'
 import Link from 'next/link'
+import ChangeNavbarItem from './changeNavbarItem'
 
 
 
@@ -26,7 +27,7 @@ const menulist = [{id:1, name:'Главная', href: '/' }, {id:2, name:'Кат
          
               {
                 menulist.map(({id, name, href})=> {
-                  return  <li key={id} className={styles.left_menu_item} ><Link href={href}>{name}</Link></li>
+                  return   <ChangeNavbarItem key={id} href={href} >{name}</ChangeNavbarItem>
                 })
               }
              

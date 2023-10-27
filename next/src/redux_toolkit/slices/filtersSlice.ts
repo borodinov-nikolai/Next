@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { platform } from 'os'
 
 
 
@@ -36,9 +37,15 @@ export const filtersSlice = createSlice({
        setSort: (state, action: PayloadAction<string>)=> {
         state.sortValue = action.payload
         },
+       resetFilters: (state)=> {
+        state.genre = '';
+        state.platform = '';
+        state.searchValue ='';
+        state.sortValue = '';
+       }
     }
 })
 
 
-export const { setGenre, setPlatform, setSearch, setSort } = filtersSlice.actions
+export const { setGenre, setPlatform, setSearch, setSort, resetFilters } = filtersSlice.actions
 export default filtersSlice.reducer
