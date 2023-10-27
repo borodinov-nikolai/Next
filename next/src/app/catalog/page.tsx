@@ -18,40 +18,41 @@ export const dynamic = 'force-dynamic';
 
 
 
-interface Props {
-  searchParams: {[key:string]:string},
-  params: {[key:string]:string}
-
-}
 
 
-interface Product {
+
+
+
+
+const Catalog = async ({searchParams}:{searchParams: Record<string, string>}) => {
   
-  id: number, 
-  attributes: {
-    name: string,
-    productID: string,
-    createdAt: string,
-    updatedAt: string,
-    publishedAt: string,
-    buyURL: string,
-    price: number
-    image: {
-      data: [
-        {attributes: {
-          url:string
-        }}
-      ]
+  
+
+
+
+
+  interface Product {
+  
+    id: number, 
+    attributes: {
+      name: string,
+      productID: string,
+      createdAt: string,
+      updatedAt: string,
+      publishedAt: string,
+      buyURL: string,
+      price: number
+      image: {
+        data: [
+          {attributes: {
+            url:string
+          }}
+        ]
+      }
     }
+  
   }
 
-}
-
-
-
-const Catalog: React.FC<Props> = async ({searchParams}) => {
-  
-  
 
   type DefaultValues =  {
     sort: string[] | undefined,
@@ -80,12 +81,12 @@ const defaultValues = parsedQS as DefaultValues
             <QueryBuilder defaultValues={defaultValues}  />
           <div className={styles.platforms} ><Platforms defaultValue={defaultValues?.filters?.platform?.name} /></div>
 
-          <div className={styles.search_sort}>
+       
             <div className={styles.search}> <Search/> </div>
-            <div className={styles.sort} ><Sort defaultValue={defaultValues?.sort?.[0]} /></div>
-          </div>
+            <div className={styles.sort} ><span>Сортировка:</span><Sort defaultValue={defaultValues?.sort?.[0]} /></div>
+
                  
-            <div className={styles.genres_title}>Выберите жанр:</div>
+            <div className={styles.genres_title}>Категории:</div>
           <div className={styles.genres}>
             <Genres defaultValue={defaultValues?.filters?.genres?.name}/></div>
         <div className={styles.product_cards}>

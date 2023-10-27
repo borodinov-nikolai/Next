@@ -36,7 +36,7 @@ const ProductCard: React.FC<Props> = async ({product}) => {
   
   return (
     <div className={styles.root}>
-       <Link href={product?.attributes.buyURL}>
+       <Link href={`/catalog/${product?.id}`}>
       <div className={styles.image}>
        <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+image
          }

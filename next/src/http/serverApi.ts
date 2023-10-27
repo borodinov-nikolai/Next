@@ -17,6 +17,16 @@ import { $cmsAPI } from "@/axios/config";
     }
 }
 
+export const getProduct = async (id:string)=> {
+    try {
+        const res = await $cmsAPI.get(`/products/${id}`);
+        return res.data.data
+    }catch(e) {
+        console.error(e)
+    }
+}
+
+
 export const getGenres = async()=> {
     try {
         const res = await $cmsAPI.get('/genres')
