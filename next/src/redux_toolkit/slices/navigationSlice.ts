@@ -11,7 +11,7 @@ interface NavigationState {
 
 
 const initialState: NavigationState = {
-    headerNavItem: 'Главная',
+    headerNavItem: '',
    
 }
 

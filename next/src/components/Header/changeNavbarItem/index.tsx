@@ -14,14 +14,21 @@ interface Props {
 const ChangeNavbarItem : React.FC<Props> = ({children, href}) => {
     const {headerNavItem} = useAppSelector((state)=> state.navigation)
     const dispatch = useAppDispatch()
-   
+
+    React.useEffect(()=> {
+    dispatch(setHeaderNavItem(window.location.pathname))
+
+    },[])
+
 
     
        
+    if (headerNavItem === href){
+     return  <li style={{borderTop: '2px solid black',userSelect: 'none'}}>{ children}</li>
+    } else
     
-  
-  return (
-    <li style={headerNavItem === children? {borderTop: '2px solid black'}: undefined } onClick={()=>{dispatch(setHeaderNavItem(children))}} ><Link href={href} >{ children}</Link></li>
+    return (
+       <li  onClick={()=>{dispatch(setHeaderNavItem(href))}} ><Link href={href} >{ children}</Link></li>
   )
 }
 
