@@ -10,6 +10,15 @@ const nextConfig = {
           },
         ],
       },
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'api.petproekt.ru',
+            pathname: '/**',
+          },
+        ],
+      },
 }
 
 module.exports = nextConfig
