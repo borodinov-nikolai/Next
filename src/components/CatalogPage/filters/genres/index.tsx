@@ -15,7 +15,7 @@ const Genres = async ({defaultValue}:{defaultValue: string | undefined}) => {
 
     <ul className={styles.list} >
       {genres?.map((genre: {id: number, attributes: {name:string}})=> {
-        return  (<ChangeGenre defaultValue={defaultValue} key={genre.id} >
+        return  (<ChangeGenre defaultValue={defaultValue} name={genre.attributes.name} key={genre.id} >
                    {genre.attributes.name}
          </ChangeGenre>)
       })}

@@ -1,7 +1,7 @@
 'use client'
 import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
 import { setHeaderNavItem } from '@/redux_toolkit/slices/navigationSlice'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 
@@ -14,21 +14,15 @@ interface Props {
 const ChangeNavbarItem : React.FC<Props> = ({children, href}) => {
     const {headerNavItem} = useAppSelector((state)=> state.navigation)
     const dispatch = useAppDispatch()
+    const router = useRouter()
 
-    React.useEffect(()=> {
-    dispatch(setHeaderNavItem(window.location.pathname))
-
-    },[])
-
-
+  
+console.log(headerNavItem)
     
        
-    if (headerNavItem === href){
-     return  <li style={{borderTop: '2px solid black',userSelect: 'none'}}>{ children}</li>
-    } else
     
     return (
-       <li  onClick={()=>{dispatch(setHeaderNavItem(href))}} ><Link href={href} >{ children}</Link></li>
+       <li style={headerNavItem === href? {cursor:'default'}:undefined }  onClick={()=>{ headerNavItem === href ? undefined : (dispatch(setHeaderNavItem(href)), router.push(href))}} >{children}</li>
   )
 }
 

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import qs from 'qs';
 import { resetFilters } from '@/redux_toolkit/slices/filtersSlice';
+import { useDebounce } from 'usehooks-ts';
 
 
 interface Props {
@@ -23,6 +24,7 @@ const QueryBuilder: React.FC<Props> = ({defaultValues}) => {
     const filters = useAppSelector((state)=> state.filters);
   const dispatch = useAppDispatch()
     const router = useRouter();
+let debouncedSearch = useDebounce(filters.searchValue, 800);
 
 
     React.useEffect(()=> {
@@ -32,6 +34,7 @@ const QueryBuilder: React.FC<Props> = ({defaultValues}) => {
     },[])
   
 
+   
 
 React.useEffect(()=>{
    
@@ -42,13 +45,13 @@ React.useEffect(()=>{
 
             filters: {
                 genres: {
-                    name: filters.genre || defaultValues?.filters?.genres?.name|| undefined
+                    name: filters.genre === 'Все'? undefined : (filters.genre || defaultValues?.filters?.genres?.name|| undefined)
                     },
                 platform: {
-                    name: filters.platform || defaultValues?.filters?.platform?.name || undefined
+                    name: filters.platform === 'Все'? undefined : (filters.platform || defaultValues?.filters?.platform?.name || undefined)
                 },
                 name: {
-                    $containsi: filters.searchValue || undefined
+                    $containsi: debouncedSearch || undefined
                 }
                 }
               
@@ -62,7 +65,7 @@ React.useEffect(()=>{
         
       
 
-}, [filters])
+}, [filters, debouncedSearch])
 
 
   return (
