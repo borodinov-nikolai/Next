@@ -8,13 +8,14 @@ const nextConfig = {
             hostname: '127.0.0.1',
             pathname: '/**',
           },
-        ],
-      },
-      images: {
-        remotePatterns: [
           {
             protocol: 'https',
             hostname: 'api.petproekt.ru',
+            pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'www.digiseller.ru',
             pathname: '/**',
           },
         ],

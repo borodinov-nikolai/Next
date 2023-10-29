@@ -17,7 +17,7 @@ const ChangeNavbarItem : React.FC<Props> = ({children, href}) => {
     const router = useRouter()
 
   
-console.log(headerNavItem)
+
     
        
     
