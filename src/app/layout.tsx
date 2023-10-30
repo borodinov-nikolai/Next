@@ -33,6 +33,7 @@ export default function RootLayout({
           </ReduxProvider>
           </StyledComponentsRegistry>
         </ConfigProvider>
+        
         </body>
     </html>
   )

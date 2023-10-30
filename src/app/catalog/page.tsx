@@ -58,7 +58,7 @@ const Catalog = async ({searchParams}:{searchParams: Record<string, string>}) =>
     sort: string[] | undefined,
     filters: {
       genres: { name: string | undefined } | undefined,
-      platform: { name: string |undefined } | undefined,
+      platforms: { name: string |undefined } | undefined,
       name: { [key:string]:string | undefined } | undefined
     } | undefined
   } | undefined
@@ -79,7 +79,7 @@ const defaultValues = parsedQS as DefaultValues
   return (
     <div className={styles.root}>
             <QueryBuilder defaultValues={defaultValues}  />
-          <div className={styles.platforms} ><Platforms defaultValue={defaultValues?.filters?.platform?.name} /></div>
+          <div className={styles.platforms} ><Platforms defaultValue={defaultValues?.filters?.platforms?.name} /></div>
 
        
             <div className={styles.search}> <Search/> </div>

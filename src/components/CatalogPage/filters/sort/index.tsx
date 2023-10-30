@@ -12,7 +12,7 @@ const Sort = ({defaultValue}:{defaultValue:string|undefined}) => {
 
   return (
  <Select
-    defaultValue={ defaultValue || 'price:asc'}
+    defaultValue={'price:asc'}
     value={defaultValue || sortValue || 'price:asc'}
     style={{ width: 180 }}
     onChange={(e)=> dispatch(setSort(e))}

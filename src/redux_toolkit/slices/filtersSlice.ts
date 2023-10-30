@@ -17,7 +17,7 @@ const initialState: FiltersState = {
     genre: '',
     platform: '',
     searchValue: '',
-    sortValue: 'price:asc'
+    sortValue: ''
 }
 
 
@@ -40,6 +40,7 @@ export const filtersSlice = createSlice({
        resetFilters: (state)=> {
         state.genre = 'Все';
         state.platform = 'Все';
+        state.sortValue = 'price:asc'
       
        }
     }

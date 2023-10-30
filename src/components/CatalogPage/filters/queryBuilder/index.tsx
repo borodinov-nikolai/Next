@@ -12,7 +12,7 @@ defaultValues:{
     sort: string[] | undefined,
     filters: {
       genres: { name: string | undefined } | undefined,
-      platform: { name: string |undefined } | undefined,
+      platforms: { name: string |undefined } | undefined,
       name: { [key:string]:string | undefined } | undefined
     } | undefined
   } | undefined
@@ -29,9 +29,11 @@ let debouncedSearch = useDebounce(filters.searchValue, 800);
 
     React.useEffect(()=> {
 
-        return ()=> {dispatch(resetFilters())}
+        if(!window.location.search) {
+            dispatch(resetFilters())
+        }
 
-    },[])
+    },[window.location.search])
   
 
    
@@ -47,8 +49,8 @@ React.useEffect(()=>{
                 genres: {
                     name: filters.genre === 'Все'? undefined : (filters.genre || defaultValues?.filters?.genres?.name|| undefined)
                     },
-                platform: {
-                    name: filters.platform === 'Все'? undefined : (filters.platform || defaultValues?.filters?.platform?.name || undefined)
+                platforms: {
+                    name: filters.platform === 'Все'? undefined : (filters.platform || defaultValues?.filters?.platforms?.name || undefined)
                 },
                 name: {
                     $containsi: debouncedSearch || undefined
