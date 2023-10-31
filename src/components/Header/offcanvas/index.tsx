@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 
 
+
 interface Props {
  
   menulist?: {
@@ -27,23 +28,27 @@ const Offcanvas: React.FC<Props> = ({ menulist, closeWidth }) => {
     const [windowWidth, setWindowWidth] = React.useState<number>(0);
 
     
-    React.useEffect(()=> {
 
-      const handleResize = ()=>  setWindowWidth(window.innerWidth);
-      
-        window.addEventListener('resize', handleResize);
-      
-        return () => window.removeEventListener('resize', handleResize);
-      
-      },[])
-      
-      
-      
+
       React.useEffect(()=> {
-        if (windowWidth > closeWidth) {
-          setShow(false)
-        }
-      }, [windowWidth])
+  
+        const handleResize = ()=>  setWindowWidth(window?.innerWidth);
+        
+          window.addEventListener('resize', handleResize);
+        
+          return () => window?.removeEventListener('resize', handleResize);
+        
+        },[])
+        
+
+        React.useEffect(()=> {
+          if (windowWidth > closeWidth) {
+            setShow(false)
+          }
+        }, [windowWidth])
+    
+      
+      
   }
 
 

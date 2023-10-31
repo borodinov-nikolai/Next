@@ -1,6 +1,6 @@
 'use client'
 import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 import qs from 'qs';
 import { resetFilters } from '@/redux_toolkit/slices/filtersSlice';
@@ -25,15 +25,21 @@ const QueryBuilder: React.FC<Props> = ({defaultValues}) => {
   const dispatch = useAppDispatch()
     const router = useRouter();
 let debouncedSearch = useDebounce(filters.searchValue, 800);
+ const searchParams = useSearchParams()
+
 
 
     React.useEffect(()=> {
-
-        if(!window.location.search) {
+    
+        if(searchParams.size < 1) {
             dispatch(resetFilters())
         }
+    
+    },[searchParams.size])
 
-    },[window.location.search])
+
+
+
   
 
    
