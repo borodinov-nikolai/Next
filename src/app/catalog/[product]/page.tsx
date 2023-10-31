@@ -11,7 +11,7 @@ const Product = async ({params}:{params:{product:string}}) => {
 
 
   const product = await getProduct(params.product)
-  const productInfo = await getProductInfo(product.attributes.productID)
+  const productInfo = await getProductInfo(product?.attributes.productID)
 
 
 
@@ -19,7 +19,7 @@ const Product = async ({params}:{params:{product:string}}) => {
   return (
     <div className={styles.root}>
       <h1 className={styles.name} >{product?.attributes.name}</h1>
-      <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product.attributes.buyURL} >Купить</Link></Button></div>
+      <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL} >Купить</Link></Button></div>
     
       
          <div className={styles.gallery}>
@@ -35,7 +35,7 @@ const Product = async ({params}:{params:{product:string}}) => {
          </div>
     
     
-     <div className={styles.info} dangerouslySetInnerHTML={{ __html: productInfo.product.info }} />
+     <div className={styles.info} dangerouslySetInnerHTML={{ __html: productInfo?.product?.info }} />
     </div>
   )
  }
