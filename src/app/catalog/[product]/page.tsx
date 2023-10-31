@@ -19,7 +19,7 @@ const Product = async ({params}:{params:{product:string}}) => {
     <div className={styles.root}>
       <button><Link href={product.attributes.buyURL} >Купить</Link></button>
      {
-      productInfo?.product?.preview_imgs?.slice(0).map( async ({id, url}:{id: number,url:string})=>{
+      productInfo?.product?.preview_imgs?.slice(1).map( async ({id, url}:{id: number,url:string})=>{
     
         return <Image key={id} src={url} height={1200} width={1200} alt='preview'></Image>
       })
