@@ -15,11 +15,13 @@ const nextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'www.digiseller.ru',
+            hostname: 'www.digiseller.com',
             pathname: '/**',
-          },
+          }
+        
         ],
       },
+     
 }
 
 module.exports = nextConfig
