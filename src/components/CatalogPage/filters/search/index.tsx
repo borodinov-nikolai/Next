@@ -1,15 +1,15 @@
 'use client'
 import React from 'react'
 import {Input} from 'antd'
-import { useAppDispatch } from '@/redux_toolkit/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
 import { resetFilters, setSearch } from '@/redux_toolkit/slices/filtersSlice'
+import { useParams } from 'next/navigation'
 
 
 
 const Search: React.FC = () => {
-//  const [value, setValue] = React.useState<string>('');
+ const {searchValue} = useAppSelector((state)=> state.filters)
  const dispatch = useAppDispatch();
-// let debouncedValue = useDebounce(value, 700);
  
  
  const find = (e : React.ChangeEvent<HTMLInputElement>)=> {
@@ -19,7 +19,7 @@ const Search: React.FC = () => {
 
   return (
  
-    <Input onChange={(e)=>find(e)} placeholder="поиск"/>
+    <Input value={searchValue} onChange={(e)=>find(e)} placeholder="поиск"/>
 
 
    
