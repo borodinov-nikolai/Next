@@ -8,7 +8,7 @@ import QueryBuilder from '@/components/CatalogPage/Filters/queryBuilder';
 import Search from '@/components/CatalogPage/Filters/search';
 import Sort from '@/components/CatalogPage/Filters/sort';
 import qs from 'qs'
-
+import { Pagination } from 'antd';
 
 
 
@@ -98,6 +98,7 @@ const defaultValues = parsedQS as DefaultValues
             } )}
            
         </div>
+        <Pagination defaultCurrent={1} total={50} />;
       </div>
 
     
