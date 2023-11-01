@@ -1,0 +1,33 @@
+
+
+
+.root {
+    width: 200px;
+    height: 800px;
+    padding: 0px 10px;
+
+    .list {
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            cursor: pointer;
+            color: white;
+            padding: 10px;
+            // background-color: rgb(204, 204, 204);
+            background-color: rgb(52, 52, 52);
+            border-radius: 10px;
+        }
+        li:hover {
+            cursor: pointer;
+            color: white;
+            padding: 10px;
+            background-color: rgb(150 150 150);
+            border-radius: 10px;
+        }
+    }
+}
+
+
