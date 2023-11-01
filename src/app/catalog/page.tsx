@@ -7,6 +7,7 @@ import Genres from '@/components/CatalogPage/Filters/Genres';
 import QueryBuilder from '@/components/CatalogPage/Filters/queryBuilder';
 import Search from '@/components/CatalogPage/Filters/search';
 import Sort from '@/components/CatalogPage/Filters/sort';
+import Paginations from "@/components/CatalogPage/Pagination";
 import qs from 'qs'
 
 
@@ -87,7 +88,8 @@ const defaultValues = parsedQS as DefaultValues
                  
             <div className={styles.genres_title}>Категории:</div>
           <div className={styles.genres}>
-            <Genres defaultValue={defaultValues?.filters?.genres?.name}/></div>
+            <Genres defaultValue={defaultValues?.filters?.genres?.name}/>
+            </div>
         <div className={styles.product_cards}>
             {products?.data?.map((product:Product)=> {
               return <div key={product.id} className={styles.card}> 
@@ -97,6 +99,7 @@ const defaultValues = parsedQS as DefaultValues
             } )}
            
         </div>
+            <div className={styles.pagination}><Paginations/></div>
        
       </div>
 

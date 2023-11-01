@@ -1,7 +1,8 @@
 .root {
+   height: 200vh;
    display: grid;
    grid-template-columns: max-content 1fr;
-   grid-template-rows: max-content 80px max-content;
+   grid-template-rows: max-content 80px min-content 180px;
 
    .platforms {
       grid-row: 1;
@@ -14,7 +15,7 @@
       align-self: center;
       justify-self: center;
       grid-row: 2;
-      grid-column: 2/3;
+      grid-column: 2;
       width: 280px;
    }
 
@@ -22,7 +23,7 @@
       align-self: center;
       justify-self: end;
       grid-row: 2;
-      grid-column: 2/3;
+      grid-column: 2;
       > span {
          margin-right: 10px;
          vertical-align: bottom;
@@ -35,27 +36,33 @@
       justify-self: center;
       align-self: center;
       grid-row: 2;
-      grid-column: 1/2;
+      grid-column: 1;
    }
 
    .genres {
-      grid-row: 3;
-      grid-column: 1/2;
+      grid-row: 3/5;
+      grid-column: 1;
    }
 
    .product_cards {
+      height: min-content;
       display: grid;
-      margin-left: 20px;
-      width: 90%;
+      padding: 0px 20px;
       grid-row: 3;
-      grid-column: 2/3;
-
+      grid-column: 2;
+      row-gap: 40px;
       grid-template-columns: repeat(6, max-content);
       grid-auto-rows: max-content;
       grid-auto-flow: row;
-      gap: 12px;
-      justify-content: start;
+      justify-content: space-between;
       justify-items: center;
+   }
+
+   .pagination {
+      justify-self: center;
+      grid-row: 4;
+      grid-column: 2;
+      align-self: center;
    }
 
    @media (max-width: 1600px) {
@@ -81,7 +88,7 @@
    }
    @media (max-width: 768px) {
       .product_cards {
-         grid-template-columns: repeat(1, max-content);
+         grid-template-columns: repeat(2, max-content);
       }
    }
    @media (max-width: 576px) {
