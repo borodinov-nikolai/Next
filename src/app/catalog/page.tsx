@@ -7,7 +7,7 @@ import Genres from '@/components/CatalogPage/Filters/Genres';
 import QueryBuilder from '@/components/CatalogPage/Filters/queryBuilder';
 import Search from '@/components/CatalogPage/Filters/search';
 import Sort from '@/components/CatalogPage/Filters/sort';
-import Paginations from "@/components/CatalogPage/Pagination";
+import Paginations from "@/components/CatalogPage/pagination";
 import qs from 'qs'
 
 
