@@ -15,7 +15,7 @@ const Product = async ({params}:{params:{product:string}}) => {
 
 
 
- if(productInfo){
+ if(productInfo?.product?.is_available){
   return (
     <div className={styles.root}>
       <h1 className={styles.name} >{product?.attributes.name}</h1>
@@ -38,6 +38,8 @@ const Product = async ({params}:{params:{product:string}}) => {
      <div className={styles.info} dangerouslySetInnerHTML={{ __html: productInfo?.product?.info }} />
     </div>
   )
+ } else {
+  return <div>товар закончился</div>
  }
   
 }
