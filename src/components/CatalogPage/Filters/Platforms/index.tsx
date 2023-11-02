@@ -20,8 +20,8 @@ const Platforms = async ({defaultValue}:{defaultValue:string|undefined}) => {
 
               {
                 platforms?.map((platform:{id:number, attributes: {name:string}})=> {
-                  return (<ChangePlatform defaultValue={defaultValue} key={platform.id} >
-                  {platform.attributes.name}
+                  return (<ChangePlatform name={platform?.attributes?.name} defaultValue={defaultValue} key={platform?.id} >
+                  {platform?.attributes?.name}
                     </ChangePlatform>)
                 
                 })

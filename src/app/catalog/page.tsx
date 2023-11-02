@@ -55,6 +55,9 @@ const Catalog = async ({searchParams}:{searchParams: Record<string, string>}) =>
 
 
   type DefaultValues =  {
+    pagination: {
+      page:string
+    } | undefined,
     sort: string[] | undefined,
     filters: {
       genres: { name: string | undefined } | undefined,
@@ -99,7 +102,7 @@ const defaultValues = parsedQS as DefaultValues
             } )}
            
         </div>
-            <div className={styles.pagination}><Paginations/></div>
+            <div className={styles.pagination}><Paginations value={products?.meta?.pagination} defaultValue={defaultValues?.pagination}/></div>
        
       </div>
 

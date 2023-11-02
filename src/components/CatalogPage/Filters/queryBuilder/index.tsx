@@ -5,10 +5,14 @@ import React from 'react';
 import qs from 'qs';
 import { resetFilters } from '@/redux_toolkit/slices/filtersSlice';
 import { useDebounce } from 'usehooks-ts';
+import { setPage } from '@/redux_toolkit/slices/paginationSlice';
 
 
 interface Props {
 defaultValues:{
+    pagination: {
+        page: string,
+    } | undefined
     sort: string[] | undefined,
     filters: {
       genres: { name: string | undefined } | undefined,
@@ -22,10 +26,11 @@ defaultValues:{
 
 const QueryBuilder: React.FC<Props> = ({defaultValues}) => {
     const filters = useAppSelector((state)=> state.filters);
-  const dispatch = useAppDispatch()
+    const pagination = useAppSelector((state)=> state.pagination);
+    const dispatch = useAppDispatch()
     const router = useRouter();
-let debouncedSearch = useDebounce(filters.searchValue, 800);
- const searchParams = useSearchParams()
+    let debouncedSearch = useDebounce(filters.searchValue, 800);
+    const searchParams = useSearchParams()
 
 
 
@@ -45,9 +50,18 @@ let debouncedSearch = useDebounce(filters.searchValue, 800);
    
 
 React.useEffect(()=>{
-   
+
+     
+
+
+      
 
         const query = qs.stringify({
+
+            pagination: {
+                page: Number(pagination?.page) || Number(defaultValues?.pagination?.page) || 1,
+                pageSize: pagination?.pageSize 
+              },
 
             sort: [filters.sortValue || defaultValues?.sort?.[0] || 'price:asc'],
 
@@ -68,12 +82,12 @@ React.useEffect(()=>{
 
         
         
-        router.replace(`?${query}`)
+        router.replace(`?${query}`)     
         
         
       
 
-}, [filters, debouncedSearch])
+}, [filters, pagination, debouncedSearch])
 
 
   return (

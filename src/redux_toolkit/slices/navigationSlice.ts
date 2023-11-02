@@ -16,8 +16,8 @@ const initialState: NavigationState = {
 }
 
 
-export const NavigationSlice = createSlice({
-    name: 'Navigation',
+export const navigationSlice = createSlice({
+    name: 'navigation',
     initialState,
     reducers: {
        setHeaderNavItem: (state, action: PayloadAction<string>)=> {
@@ -28,5 +28,5 @@ export const NavigationSlice = createSlice({
 })
 
 
-export const { setHeaderNavItem} = NavigationSlice.actions
-export default NavigationSlice.reducer
+export const { setHeaderNavItem} = navigationSlice.actions
+export default navigationSlice.reducer
