@@ -15,7 +15,7 @@ const nextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'www.digiseller.com',
+            hostname: 'digiseller.com',
             pathname: '/**',
           }
         
