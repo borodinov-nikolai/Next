@@ -17,11 +17,11 @@ import { $cmsAPI } from "@/axios/config";
     }
 }
 
-export const getCarousel = async ()=> {
+export const getCarousel = async (id:number)=> {
     try {
         
     
-        const res = await $cmsAPI.get(`/carousels/1?populate=*`)
+        const res = await $cmsAPI.get(`/carousels/${id}?populate=*`)
      
         return res.data
 

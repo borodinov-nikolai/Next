@@ -14,6 +14,9 @@ const Home = () => {
         <Carousel_/>
        </div>
 
+       <div className={styles.new} >Горячие новинки!</div>
+       <div> </div>
+
 
     </div>
   )

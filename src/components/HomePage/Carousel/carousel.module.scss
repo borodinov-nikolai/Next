@@ -3,8 +3,14 @@
 
 
 .root {
+  user-select: none;
+   position: relative;
+
+
  
    
+
+
 
     
  .item {
@@ -12,14 +18,14 @@
 
     .image {
     
-        height: 50vh;
+   
         width: 100%;
-        // overflow: hidden;
+    
       
         
         
         img {
-            height: 900px;
+            height: auto;
             width: 100%;
             z-index: -1;
         }
@@ -35,5 +41,38 @@
         left: 10%;
     }
  }
+
+ :global(.slick-prev) {
+      
+        position: absolute !important;
+         
+        left: 50px !important;
+        z-index: 10 !important;
+        
+        svg {
+            color: rgb(255, 255, 255);
+            height: 40px;
+            width: 40px;
+          }
+    
+   }
+
+
+ :global(.slick-next) {
+      
+        position: absolute !important;
+         
+        right: 50px !important;
+        z-index: 10 !important;
+        
+        svg {
+            color: rgb(255, 255, 255);
+            height: 40px;
+            width: 40px;
+          }
+    
+   }
    
 }
+
+
