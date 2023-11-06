@@ -1,0 +1,39 @@
+
+
+
+
+.root {
+ 
+   
+
+    
+ .item {
+    position: relative;
+
+    .image {
+    
+        height: 50vh;
+        width: 100%;
+        // overflow: hidden;
+      
+        
+        
+        img {
+            height: 900px;
+            width: 100%;
+            z-index: -1;
+        }
+
+    
+    }
+
+    .text {
+        font-size: 40px;
+        color: white;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+ }
+   
+}
