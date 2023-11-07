@@ -40,7 +40,7 @@ const Carousel_ = async () => {
       </div>
       <div className={styles.item}>
       <div className={styles.image} >
-            <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+image2} width={4000} height={4000} alt='spider man 2'></Image>
+            <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+image} width={4000} height={4000} alt='spider man 2'></Image>
         </div>      
       </div>
       <div className={styles.item}>

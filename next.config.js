@@ -9,6 +9,11 @@ const nextConfig = {
             pathname: '/**',
           },
           {
+            protocol: 'http',
+            hostname: '0.0.0.0',
+            pathname: '/**',
+          },
+          {
             protocol: 'https',
             hostname: 'api.petproekt.ru',
             pathname: '/**',
