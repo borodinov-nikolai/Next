@@ -29,7 +29,7 @@
         height: 100vh;
         background: black;
         opacity: 40%;
-        z-index: 1;
+        z-index: 1000;
     }
 
     .window {
@@ -42,7 +42,7 @@
         left: 0px;
         margin-left: -400px;
         transition: visibility 0.3s, margin-left 0.3s;
-        z-index: 2;
+        z-index: 1001;
 
      }
 
