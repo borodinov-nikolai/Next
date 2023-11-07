@@ -40,22 +40,25 @@ const Carousel_ = async () => {
         </div>      
      
        <div className={styles.info} >
-        <div className={styles.info_name}>Spider-Man 2</div>
+        <div className={styles.info_name}>Spider-Man 2 на ваш аккаунт (PS5)</div>
         <div className={styles.info_price} > 4000 <span>₽</span>  </div>
          </div>
        </Link>
       </div>
       <div className={styles.item} >
+        <Link href='/catalog'>
         <div className={styles.image} >
             <Image className={styles.img_desktop} src={process.env.NEXT_PUBLIC_CMS_IMG_URL+image} width={4000} height={4000} alt='spider man 2'></Image>
             <Image className={styles.img_mobile} src={process.env.NEXT_PUBLIC_CMS_IMG_URL+mobile_image} width={4000} height={4000} alt='spider man 2'></Image>
         </div>      
      
-        <div className={styles.info} >
-        <div className={styles.info_name}>Spider-Man 2</div>
-        <div className={styles.info_price} > 4000 <span>₽</span></div>
+       <div className={styles.info} >
+        <div className={styles.info_name}>Spider-Man 2 на ваш аккаунт (PS5)</div>
+        <div className={styles.info_price} > 4000 <span>₽</span>  </div>
          </div>
+       </Link>
       </div>
+    
 
     </Carousel>
   );

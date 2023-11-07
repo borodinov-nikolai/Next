@@ -79,7 +79,7 @@ const Offcanvas: React.FC<Props> = ({ menulist, closeWidth }) => {
           <ul className={styles.menu} >
             {
               menulist?.map(({id, name, href}) => {
-                return <li key={id} className={styles.menuItem} ><Link href={href} >{name}</Link></li>
+                return <Link href={href} ><li key={id} className={styles.menuItem} onClick={()=>setShow(false)} >{name}</li></Link>
               })
             }
           </ul>

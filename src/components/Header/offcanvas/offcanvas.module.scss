@@ -1,79 +1,78 @@
 .root {
-    position: relative;
+  position: relative;
+  height: 100%;
+
+  .show_btn {
     height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
 
-    .show_btn {
-        height: 100%;
+  .close_btn {
+    cursor: pointer;
+    top: 10px;
+    right: 20px;
+    position: absolute;
+
+    svg {
+      fill: rgb(0, 0, 0);
+    }
+  }
+
+  .fade {
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 40%;
+    z-index: 1000;
+  }
+
+  .window {
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    height: 100vh;
+    width: 320px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin-left: -400px;
+    transition: visibility 0.3s, margin-left 0.3s;
+    z-index: 1001;
+  }
+
+  .show {
+    visibility: visible;
+    margin-left: 0px;
+  }
+
+  .inner {
+    padding: 50px 20px;
+
+    .menu {
+      padding-top: 40px;
+      text-align: center;
+      a {
+        color: white;
+      }
+      .menuItem {
         cursor: pointer;
-        display: flex;
-        align-items: center;
-    }
+        background: rgb(40, 40, 40);
+        border-radius: 10px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        min-width: max-content;
 
-    .close_btn {
-        cursor: pointer;
-        top: 10px;
-        right: 20px;
-        position: absolute;
-
-        svg {
-
-           fill: white;
+        &:hover {
+          background: rgb(74, 74, 74);
         }
+      }
     }
-
-    .fade {
-        top: 0px;
-        left: 0px;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background: black;
-        opacity: 40%;
-        z-index: 1000;
-    }
-
-    .window {
-        background-color: rgb(0, 0, 0);
-        visibility: hidden;
-        height: 100vh;
-        width: 320px;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        margin-left: -400px;
-        transition: visibility 0.3s, margin-left 0.3s;
-        z-index: 1001;
-
-     }
-
-    .show {
-        visibility: visible;
-        margin-left: 0px;
-    }
+  }
 
 
-
-    
-
-    .inner {
-        padding: 50px 20px;
-        .menu {
-          
-            .menuItem {
-                cursor: pointer;
-                font-size: 20px;
-                a {
-                    color: white;
-                }
-              
-            }
-        }
-    }
-
-    // @media(max-width: 576px) {
-    //     .window {
-    //         width: 100vw;
-    //     }
-    // }
- 
 }
