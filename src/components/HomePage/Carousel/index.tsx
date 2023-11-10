@@ -1,20 +1,13 @@
 import React from 'react';
 import { Carousel} from 'antd';
-import { getCarousel } from '@/http/serverApi';
+import { getCarousel } from '@/http/cmsAPI';
 import Image from 'next/image';
 import styles from './carousel.module.scss'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 
 
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+
 
 const Carousel_ = async () => {
   
@@ -25,10 +18,9 @@ const Carousel_ = async () => {
     const image = carousel?.data.attributes.image.data[0].attributes.url
     const mobile_image = carousel?.data.attributes.image.data[1].attributes.url
 
-  console.log(carousel?.data.attributes?.image.data[0].attributes.url)
 
 
-  const right = <div>right</div>
+ 
 
   return (
     <Carousel prevArrow={<LeftOutlined />} nextArrow={<RightOutlined/>}  fade={true} arrows={true} autoplay={true}  className={styles.root} >
@@ -40,7 +32,7 @@ const Carousel_ = async () => {
         </div>      
      
        <div className={styles.info} >
-        <div className={styles.info_name}>Spider-Man 2 на ваш аккаунт (PS5)</div>
+        <div  className={styles.info_name}>Spider-Man 2 на ваш аккаунт (PS5)</div>
         <div className={styles.info_price} > 4000 <span>₽</span>  </div>
          </div>
        </Link>

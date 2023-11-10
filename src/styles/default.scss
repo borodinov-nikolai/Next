@@ -1,0 +1,41 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: black;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+
+.container {
+  height: 100%;
+  width: 1600px;
+  margin: 0 auto;
+
+
+  @include for-desktop-large {
+    width: 1320px;
+  }
+
+  @include for-desktop-medium {
+    width: 1140px;
+  }
+
+ 
+  @include for-desktop-small {
+    width: 100%;
+  }
+}
+
+

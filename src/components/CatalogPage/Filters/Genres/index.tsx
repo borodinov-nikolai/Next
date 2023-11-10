@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './genres.module.scss'
-import { getGenres } from '@/http/serverApi'
+import { getGenres } from '@/http/cmsAPI'
 import ChangeGenre from './changeGenre'
 
 const Genres = async ({defaultValue}:{defaultValue: string | undefined}) => {

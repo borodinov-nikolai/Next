@@ -24,6 +24,7 @@ const Offcanvas: React.FC<Props> = ({ menulist, closeWidth }) => {
 
 
 
+
   if(closeWidth) {
     const [windowWidth, setWindowWidth] = React.useState<number>(0);
 

@@ -8,7 +8,6 @@ export const store = configureStore({
         filters,
         navigation,
         pagination
-
     }
 })
 

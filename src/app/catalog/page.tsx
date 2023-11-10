@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './catalog.module.scss';
-import { getProducts } from '@/http/serverApi';
+import { getProducts } from '@/http/cmsAPI';
 import ProductCard from '@/components/CatalogPage/ProductCard';
 import Platforms from '@/components/CatalogPage/Filters/Platforms';
 import Genres from '@/components/CatalogPage/Filters/Genres';
@@ -9,6 +9,7 @@ import Search from '@/components/CatalogPage/Filters/search';
 import Sort from '@/components/CatalogPage/Filters/sort';
 import Paginations from "@/components/CatalogPage/pagination";
 import qs from 'qs'
+import { ProductData } from '@/interfaces/Products';
 
 
 
@@ -31,27 +32,7 @@ const Catalog = async ({searchParams}:{searchParams: Record<string, string>}) =>
 
 
 
-  interface Product {
-  
-    id: number, 
-    attributes: {
-      name: string,
-      productID: string,
-      createdAt: string,
-      updatedAt: string,
-      publishedAt: string,
-      buyURL: string,
-      price: number
-      image: {
-        data: [
-          {attributes: {
-            url:string
-          }}
-        ]
-      }
-    }
-  
-  }
+
 
 
   type DefaultValues =  {
@@ -72,7 +53,7 @@ const Catalog = async ({searchParams}:{searchParams: Record<string, string>}) =>
   const queryString = qs.stringify(searchParams)
 
 let products = await getProducts(queryString);
-  
+  console.log(products)
    const parsedQS = qs.parse(queryString);
   
 const defaultValues = parsedQS as DefaultValues
@@ -94,7 +75,7 @@ const defaultValues = parsedQS as DefaultValues
             <Genres defaultValue={defaultValues?.filters?.genres?.name}/>
             </div>
         <div className={styles.product_cards}>
-            {products?.data?.map((product:Product)=> {
+            {products?.data?.map((product: ProductData)=> {
               return <div key={product.id} className={styles.card}> 
             
               <ProductCard product={product} />

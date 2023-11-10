@@ -1,17 +1,22 @@
 import { getProductInfo } from '@/http/digisellerAPI'
-import { getProduct } from '@/http/serverApi'
+import { getProduct } from '@/http/cmsAPI'
 import Image from 'next/image'
 import React from 'react'
 import styles from './product.module.scss'
 import Link from 'next/link'
 import { Button } from 'antd'
+import { ProductData } from '@/interfaces/Products'
+
+
 
 
 const Product = async ({params}:{params:{product:string}}) => {
 
+     
+  const product : ProductData | undefined = await getProduct(params.product)
 
-  const product = await getProduct(params.product)
-  const productInfo = await getProductInfo(product?.attributes.productID)
+
+  const productInfo = await getProductInfo(product?.attributes.productID!)
 
 
 
@@ -19,7 +24,7 @@ const Product = async ({params}:{params:{product:string}}) => {
   return (
     <div className={styles.root}>
       <h1 className={styles.name} >{product?.attributes.name}</h1>
-      <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL} >Купить</Link></Button></div>
+      <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL!} >Купить</Link></Button></div>
     
       
          <div className={styles.gallery}>

@@ -2,28 +2,11 @@ import React from 'react'
 import styles from './productCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ProductsData } from '@/interfaces/Products'
 
 
 interface Props {
-  product: {
-    id: number, 
-      attributes: {
-        name: string,
-        productID: string,
-        createdAt: string,
-        updatedAt: string,
-        publishedAt: string,
-        buyURL: string,
-        price: number
-        image: {
-          data: [{
-            attributes: {
-              url:string
-            }}
-          ]
-        }
-      }
-  }
+  product: ProductsData;
 }
 
 

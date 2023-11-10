@@ -7,7 +7,9 @@ import theme from '@/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
 import ReduxProvider from '@/redux_toolkit/reduxProvider'
 
+
 const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,8 +31,8 @@ export default function RootLayout({
         <div className="container">
         <Header/>
           {children}
-        </div>
-          </ReduxProvider>
+        </div>   </ReduxProvider>
+       
           </StyledComponentsRegistry>
         </ConfigProvider>
         

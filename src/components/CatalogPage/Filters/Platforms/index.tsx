@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './platforms.module.scss'
-import { getPlatforms } from '@/http/serverApi'
+import { getPlatforms } from '@/http/cmsAPI'
 import ChangePlatform from './changePlatform';
 
 

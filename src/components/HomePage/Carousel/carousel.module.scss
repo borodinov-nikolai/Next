@@ -1,157 +1,131 @@
+@import "@/styles/variables.module.scss";
+
 .root {
   user-select: none;
   position: relative;
   width: 100%;
 
-  .item {
-    position: relative;
-
-    .image {
-      width: 100%;
-
-      .img_mobile {
-        display: none;
-      }
-
-      img {
-        height: auto;
-        width: 100%;
-        z-index: -1;
-      }
-    }
-  }
-
-  .info {
-    display: none;
-    .info_price{
-      span {
-        font-size: 15px;
-      }
-    }
-   
-  }
-
   :global(.slick-prev) {
     display: none !important;
+    position: absolute !important;
+    top: auto !important;
+    bottom: 34px !important;
+    left: 5% !important;
+    z-index: 2 !important;
+
+    svg {
+      height: 40px;
+      width: 40px;
+      color: white;
+    }
   }
 
   :global(.slick-next) {
     display: none !important;
-  }
+    position: absolute !important;
+    top: auto !important;
+    bottom: 34px !important;
+    right: 5% !important;
+    z-index: 2 !important;
 
-  @media (min-width: 992px) {
-    &:hover {
-      .info {
-        height: 35px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 20px;
-        color: white;
-        background: rgba(0, 0, 0, 0.597);
-        padding-top: 10px;
-        padding-left: 200px;
-        padding-right: 200px;
-        padding-bottom: 20px;
-        top: auto;
-        bottom: 0%;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        width: 100%;
-        text-align: center;
-
-        .info_name {
-          margin-left: 12%;
-        }
-
-        .info_price {
-          margin-right: 12%;
-         
-        }
-      }
-
-      :global(.slick-prev) {
-        display: block !important;
-        position: absolute !important;
-        top: auto !important;
-        bottom: 34px !important;
-        left: 5% !important;
-        z-index: 2 !important;
-
-        svg {
-          height: 40px;
-          width: 40px;
-          color: white;
-        }
-      }
-
-      :global(.slick-next) {
-        display: block !important;
-        position: absolute !important;
-        top: auto !important;
-        bottom: 34px !important;
-        right: 5% !important;
-        z-index: 2 !important;
-
-        svg {
-          height: 40px;
-          width: 40px;
-          color: white;
-        }
-      }
+    svg {
+      height: 40px;
+      width: 40px;
+      color: white;
     }
   }
 
-  @media (max-width: 992px) {
-    .info {
-      height: 35px;
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 20px;
-      color: white;
-      background: rgba(0, 0, 0, 0.681);
-      padding-top: 10px;
-      padding-left: 200px;
-      padding-right: 200px;
-      padding-bottom: 20px;
-      top: auto;
-      bottom: 0%;
-      left: 50%;
-      transform: translate(-50%, 0%);
+  .item {
+    position: relative;
+  }
+
+  .image {
+    width: 100%;
+
+    img {
+      height: auto;
       width: 100%;
-      text-align: center;
+      z-index: -1;
+    }
 
-      .info_name {
-        margin-left: 5%;
-      }
+    .img_mobile {
+      display: none;
+    } 
+  }
 
-      .info_price {
-        margin-right: 5%;
-      }
+  .info {
+    display: none;
+    height: 58px;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background: rgba(0, 0, 0, 0.597);
+    padding-top: 10px;
+    padding-left: 14%;
+    padding-right: 14%;
+    padding-bottom: 20px;
+    top: auto;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    text-align: center;
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  &:hover {
+    .info {
+      display: flex;
     }
 
     :global(.slick-prev) {
-      display: none !important;
+      display: block !important;
     }
-
     :global(.slick-next) {
-      display: none !important;
+      display: block !important;
     }
   }
 
-  @media (max-width: 576px) {
-    .item {
-      .image {
-        .img_desktop {
-          display: none;
-        }
+  @include for-tablet-landscape {
 
-        .img_mobile {
-          display: block;
-        }
+    
+    .info {
+      padding-left: 5%;
+      padding-right: 5%;
+
+      display: flex;
+
+    
+    }
+
+    &:hover {
+      :global(.slick-prev) {
+        display: none !important;
+      }
+      :global(.slick-next) {
+        display: none !important;
+      }
+    }
+  }
+
+  @include for-phone {
+
+    .info {
+      font-size: $font-size--small;
+    }
+
+    .image {
+      .img_desktop {
+        display: none;
+      }
+
+      .img_mobile {
+        display: block;
       }
     }
   }
