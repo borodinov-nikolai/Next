@@ -9,7 +9,7 @@ import { $cmsAPI } from "@/axios/config";
         
     
         const res = await $cmsAPI.get(`/products?${queryString?queryString:'sort=price:asc'}&populate=*`)
-         console.log(res)
+      
         return res.data
 
     } catch(e) {

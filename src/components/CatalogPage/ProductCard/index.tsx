@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './productCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ProductsData } from '@/interfaces/Products'
+import { ProductData } from '@/interfaces/Products'
 
 
 interface Props {
-  product: ProductsData;
+  product: ProductData;
 }
 
 

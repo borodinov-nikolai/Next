@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './carousel.module.scss'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { CarouselItemData } from '@/interfaces/CarouselItems';
 
 
 
@@ -13,10 +14,10 @@ const Carousel_ = async () => {
   
 
 
-  const carousel = await getCarousel(1);
+  const carousel : CarouselItemData[] | undefined = await getCarousel(1);
   const carousel2 = await getCarousel(2);
-    const image = carousel?.data.attributes.image.data[0].attributes.url
-    const mobile_image = carousel?.data.attributes.image.data[1].attributes.url
+    const image = carousel?.[0].attributes.image.data[0].attributes.url!
+    const mobile_image = carousel?.[0].attributes.image.data[1].attributes.url!
 
 
 

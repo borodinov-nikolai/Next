@@ -26,9 +26,9 @@ export const getCarousel = async (id:number)=> {
     try {
         
     
-        const {data} :{data: CarouselItems }= await $cmsAPI.get(`/carousel-items/${id}?populate=*`)
+        const {data} :{data: CarouselItems }= await $cmsAPI.get(`/carousel-items?populate=*`)
      
-        return data
+        return data?.data
 
     } catch(e) {
         console.error(e)
