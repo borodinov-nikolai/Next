@@ -2,7 +2,7 @@ import { $cmsAPI } from "@/axios/config";
 import { CarouselItems } from "@/interfaces/CarouselItems";
 import { Genres } from "@/interfaces/Genres";
 import { Platforms } from "@/interfaces/Platforms";
-import { Product, ProductData, Products } from "@/interfaces/Products";
+import { Product, Products } from "@/interfaces/Products";
 
 
 
@@ -63,11 +63,3 @@ export const getPlatforms = async ()=> {
         console.error(e)
     }
 }
-
-
-export const getProductTest = async () => {
-    const res: Product = await fetch(
-      `http://localhost:1337/api/products/1`
-    ).then((data) => data?.json());
-    return res.data;
-  };

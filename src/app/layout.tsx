@@ -2,12 +2,10 @@ import Header from '@/components/Header'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../styles/global.scss'
-import StyledComponentsRegistry from '@/providers/AntdRegistry'
+import StyledComponentsRegistry from '@/antDesign/AntdRegistry'
 import theme from '@/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
-import ReduxProvider from '@/providers/reduxProvider'
-import ReactQueryProvider from '@/providers/reactQueryProvider'
-import Script from 'next/script'
+import ReduxProvider from '@/redux_toolkit/reduxProvider'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,19 +23,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-     
       
       <body className={inter.className}>
         <ConfigProvider theme={theme} >
         <StyledComponentsRegistry>
           <ReduxProvider>
-            <ReactQueryProvider>
         <div className="container">
         <Header/>
           {children}
-        </div>   
-        </ReactQueryProvider>
-        </ReduxProvider>
+        </div>   </ReduxProvider>
        
           </StyledComponentsRegistry>
         </ConfigProvider>

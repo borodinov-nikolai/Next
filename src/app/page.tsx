@@ -4,13 +4,8 @@ import Carousel_ from '@/components/HomePage/Carousel'
 
 
 
-
-const Home =  async () => {
-
-
-
+const Home = () => {
   return (
-  
     <div className={styles.root}>
       
        {/* <div className={styles.title}>Добро пожаловать на petproekt.store</div>
@@ -22,9 +17,8 @@ const Home =  async () => {
        <div className={styles.new} >Горячие новинки!</div>
        <div> </div>
 
-        
+
     </div>
-    
   )
 }
 
