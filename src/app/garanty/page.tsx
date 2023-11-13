@@ -1,8 +1,12 @@
+import Test from '@/components/Test'
 import React from 'react'
 
 const Garanty = () => {
   return (
-    <div>Garanty</div>
+    <div>
+
+      <Test/>
+    </div>
   )
 }
 

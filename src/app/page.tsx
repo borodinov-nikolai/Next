@@ -1,17 +1,23 @@
 import React from 'react'
 import styles from './home.module.scss'
 import Carousel_ from '@/components/HomePage/Carousel'
+import { getCarousel } from '@/http/cmsAPI';
+import { CarouselItemData } from '@/interfaces/CarouselItems';
 
 
 
-const Home = () => {
+const Home = async () => {
+  const carouselData : CarouselItemData[] | undefined = await getCarousel();
+
+
   return (
+
+
     <div className={styles.root}>
       
-       {/* <div className={styles.title}>Добро пожаловать на petproekt.store</div>
-       <div> У нас вы можете приобрести аккаунты и ключи игр</div> */}
+      
        <div>
-        <Carousel_/>
+        <Carousel_ data={carouselData} />
        </div>
 
        <div className={styles.new} >Горячие новинки!</div>

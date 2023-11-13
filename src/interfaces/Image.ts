@@ -1,6 +1,10 @@
 export interface Images {
     data: ImageData[]
   }
+
+  export interface Image {
+    data: ImageData
+  }
   
   export interface ImageData {
     id: number

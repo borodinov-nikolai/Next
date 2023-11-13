@@ -22,7 +22,7 @@ import { Product, Products } from "@/interfaces/Products";
     }
 }
 
-export const getCarousel = async (id:number)=> {
+export const getCarousel = async ()=> {
     try {
         
     
