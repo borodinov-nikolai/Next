@@ -1,4 +1,4 @@
-import { Images } from "./Image"
+import { Image} from "./Image"
 import { Meta } from "./Meta"
 
 
@@ -27,7 +27,7 @@ export interface Products {
     createdAt: string
     updatedAt: string
     publishedAt: string
-    image: Images
+    image: Image
   }
   
 

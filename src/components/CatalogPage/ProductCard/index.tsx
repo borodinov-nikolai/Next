@@ -21,7 +21,7 @@ const ProductCard: React.FC<Props> = async ({product}) => {
    
       <Link href={`/catalog/${product?.id}`}>
       <div className={styles.image}>
-       <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+product?.attributes?.image?.data?.[0].attributes?.url}
+       <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+product?.attributes?.image?.data?.attributes?.url}
         width={200} height={280} quality={80} alt={product?.attributes.name}></Image>
       </div>
   

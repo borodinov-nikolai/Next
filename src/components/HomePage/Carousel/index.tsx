@@ -1,39 +1,42 @@
+'use client'
 import React from 'react';
 import { Carousel} from 'antd';
-import { getCarousel } from '@/http/cmsAPI';
 import Image from 'next/image';
 import styles from './carousel.module.scss'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-import { CarouselItemData } from '@/interfaces/CarouselItems';
-import { CustomArrowProps } from "react-slick";
 
 
 
-const Carousel_ = async () => {
+
+
+const Carousel_ = ({data}: any) => {
   
 
 
-  const carousel : CarouselItemData[] | undefined = await getCarousel(1);
-  const carousel2 = await getCarousel(2);
-    const image = carousel?.[0].attributes.image.data[0].attributes.url!
-    const mobile_image = carousel?.[0].attributes.image.data[1].attributes.url!
+  const image = data?.[0].attributes.image.data[0].attributes.url!
+  const mobile_image = data?.[0].attributes.image.data[1].attributes.url!
 
 
 
-    const PrevArrow = ({currentSlide, slideCount, ...props}: CustomArrowProps) => (
-      <div {...props}>
-      <LeftOutlined />
-      </div>
-    );
-    const NextArrow = ({currentSlide, slideCount, ...props}: CustomArrowProps) => (
-      <div {...props}>
-     <RightOutlined/>
-      </div>
-    );
-
+const SlickButtonFix = (
+  props: {
+    children: React.ReactNode;
+    slideCount?: number;
+    currentSlide?: number;
+  }
+) => {
+  const { children, currentSlide, slideCount, ...others } = props;
   return (
-    <Carousel prevArrow={<PrevArrow/>} nextArrow={<NextArrow/>}  fade={true} arrows={true} autoplay={true}  className={styles.root} >
+    <span {...others}>
+      {children}
+    </span>
+  );
+};
+
+
+  return ( 
+    <Carousel prevArrow={ <SlickButtonFix> <LeftOutlined/>  </SlickButtonFix>}  nextArrow={<SlickButtonFix> <RightOutlined/>  </SlickButtonFix>}  fade={true} arrows={true} autoplay={true}  className={styles.root} >
       <div className={styles.item} >
         <Link href='/catalog'>
         <div className={styles.image} >
