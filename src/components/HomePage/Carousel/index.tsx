@@ -6,7 +6,7 @@ import styles from './carousel.module.scss'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { CarouselItemData } from '@/interfaces/CarouselItems';
-
+import { CustomArrowProps } from "react-slick";
 
 
 
@@ -21,10 +21,19 @@ const Carousel_ = async () => {
 
 
 
- 
+    const PrevArrow = ({currentSlide, slideCount, ...props}: CustomArrowProps) => (
+      <div {...props}>
+      <LeftOutlined />
+      </div>
+    );
+    const NextArrow = ({currentSlide, slideCount, ...props}: CustomArrowProps) => (
+      <div {...props}>
+     <RightOutlined/>
+      </div>
+    );
 
   return (
-    <Carousel prevArrow={<LeftOutlined />} nextArrow={<RightOutlined/>}  fade={true} arrows={true} autoplay={true}  className={styles.root} >
+    <Carousel prevArrow={<PrevArrow/>} nextArrow={<NextArrow/>}  fade={true} arrows={true} autoplay={true}  className={styles.root} >
       <div className={styles.item} >
         <Link href='/catalog'>
         <div className={styles.image} >
