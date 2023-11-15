@@ -22,11 +22,11 @@ import { Product, Products } from "@/interfaces/Products";
     }
 }
 
-export const getCarousel = async (id:number)=> {
+export const getCarousel = async ()=> {
     try {
         
     
-        const {data} :{data: CarouselItems }= await $cmsAPI.get(`/carousel-items?populate=*`)
+        const {data} :{data: CarouselItems } = await $cmsAPI.get(`/carousel-items?populate=*`)
      
         return data?.data
 

@@ -1,4 +1,4 @@
-import { Images } from "./Image"
+import { Image } from "./Image"
 import { Meta } from "./Meta"
 
 
@@ -18,5 +18,8 @@ export interface CarouselItemAttributes {
   createdAt: string
   updatedAt: string
   publishedAt: string
-  image: Images
+  name: string
+  price: number
+  desktop_image: Image
+  mobile_image: Image
 }
