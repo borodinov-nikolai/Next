@@ -2,14 +2,18 @@ import React from 'react'
 import styles from './home.module.scss'
 import Carousel from '@/components/HomePage/Carousel'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
-import { getCarousel } from '@/http/cmsAPI';
+import { getCarousel, getNewProducts } from '@/http/cmsAPI';
+import { Products } from '@/interfaces/Products';
+import ProductCard from '@/components/CatalogPage/ProductCard';
 
 
 
 const Home = async () => {
 
   const carouselItems : CarouselItemData[] | undefined = await getCarousel();
- 
+  const newProducts : Products | undefined = await getNewProducts();
+
+  console.log()
  
  
   return (
@@ -21,7 +25,28 @@ const Home = async () => {
        </div>
 
        <div className={styles.new} >Горячие новинки!</div>
-       <div> </div>
+       <div className={styles.cardHolder} > 
+         <div className={styles.cardHolder_inner}>
+           {
+            newProducts && newProducts.data.map((product)=> {
+              return (
+                <ProductCard product={product} size='large' imageResolution={{height:500, width:500}} />
+              )
+            })
+           }
+         </div>
+       </div>
+
+       <div className={styles.info} >
+       <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
+        <div className={styles.info_text}>
+           ваш идеальный партнер для приобретения оффлайн и онлайн активаций в сервисах Steam, Microsoft Store, Epic Games Store, Ubisoft Connect и многих других. Мы специализируемся на продаже различных цифровых товаров, включая аккаунты, лицензионные ключи для Steam, Windows и многое другое.
+          
+          У нас вы найдете широкий ассортимент товаров, которые помогут вам расширить вашу игровую коллекцию или обновить программное обеспечение. Мы предлагаем только официальные товары по доступным ценам, чтобы вы могли наслаждаться играми и программами без лишних затрат.
+          
+          Не упустите возможность приобрести качественные цифровые товары и активации по выгодным ценам.
+        </div>
+       </div>
 
 
     </div>

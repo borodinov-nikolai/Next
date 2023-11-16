@@ -4,12 +4,43 @@
 
 .root {
 
+   height: 200vh;
+
    .title {
       
    }
 
    .new {
+      margin-top: 50px;
       text-align: center;
       font-size: 40px;
+   }
+  .cardHolder{
+
+    width: 100%;
+    overflow: hidden;
+
+   .cardHolder_inner {
+      width: 10000px;
+      padding-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(5, max-content);
+      grid-template-rows: auto;
+      gap: 20px;
+      align-content: center;
+      justify-content: start;
+   }}
+
+   .info {
+      text-align: center;
+  
+      padding-top: 50px;
+
+      .info_title {
+      }
+      .info_text {
+         padding-top: 20px;
+      }
+
    }
 }

@@ -52,7 +52,7 @@ const Catalog = async ({
         {products?.data?.map((product: ProductData) => {
           return (
             <div key={product.id} className={styles.card}>
-              <ProductCard product={product} />
+              <ProductCard  product={product} size="medium" />
             </div>
           );
         })}

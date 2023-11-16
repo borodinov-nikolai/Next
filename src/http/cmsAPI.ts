@@ -22,6 +22,20 @@ import { Product, Products } from "@/interfaces/Products";
     }
 }
 
+export const getNewProducts = async ()=> {
+    try {
+        
+    
+        const {data}: {data: Products} = await $cmsAPI.get(`/products?filters[new][$eq]=true&populate=*`)
+    
+        
+        return data
+
+    } catch(e) {
+        console.error(e)
+    }
+}
+
 export const getCarousel = async ()=> {
     try {
         

@@ -24,6 +24,8 @@ export interface Products {
     productID: string
     buyURL: string
     price: number
+    hit: boolean
+    new: boolean
     createdAt: string
     updatedAt: string
     publishedAt: string

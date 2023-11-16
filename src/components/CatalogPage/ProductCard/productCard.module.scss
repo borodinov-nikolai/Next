@@ -2,19 +2,24 @@
 
 
 .root {
+    position: relative;
     user-select: none;
-    height: 320px;
-    width: 200px;
     border: 1px solid rgb(169, 169, 169);
     border-radius: 10px;
     overflow: hidden;
     transition: box-shadow 0.3s;
     background-color: rgb(227, 227, 227);
 
+
+
+ 
+
+
+
     .image {
        
         img {
-            height: 280px;
+            height: 300px;
             width: 100%;
         }
     }
@@ -26,26 +31,48 @@
     }
 
     .price{
+        background-color: rgba(0, 0, 0, 0.597);
+        padding: 4px 7px;
+        position: absolute;
+        color: white;
+        bottom: 0px;
+        right: 0px;
         font-size: 20px;
-        font-weight: 500;
-        border-radius: 10px;
-        padding: 2px 5px;
-        margin: 0 auto;
+        border-radius: 10px 0px 10px 0px;
         width: max-content;
-        margin-top: 5px;
+    
 
         span {
             font-size: 18px;
         }
         
 
-       button {
-        font-size: 12px;
-        margin-right: 20px;
-       }
+       
     }
 }
 
 .root:hover {
    box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
+}
+
+
+   //sizes
+
+   .medium {
+    height: 300px;
+    width: 200px;
+}
+
+.large {
+    height: 450px;
+    width: 300px;
+
+    .image {
+
+        img {
+            height: 450px;
+            width: 100%;
+        }
+       
+    }
 }

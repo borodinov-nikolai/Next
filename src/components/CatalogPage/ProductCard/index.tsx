@@ -7,27 +7,32 @@ import { ProductData } from '@/interfaces/Products'
 
 interface Props {
   product: ProductData;
+  size?: "medium" | "large";
+  imageResolution?: {
+    width: number,
+    height: number
+  }
 }
 
 
-const ProductCard: React.FC<Props> = async ({product}) => {
+const ProductCard: React.FC<Props> = async ({product, size='medium', imageResolution}) => {
   
-
-
+const cmsURL =  process.env.NEXT_PUBLIC_CMS_IMG_URL
+const imageURL = product?.attributes?.image?.data?.attributes?.url
 
 
   return (
-    <div className={styles.root}>
+    <div className={[styles.root, styles[size]].join(' ')}>
    
       <Link href={`/catalog/${product?.id}`}>
       <div className={styles.image}>
-       <Image src={process.env.NEXT_PUBLIC_CMS_IMG_URL+product?.attributes?.image?.data?.attributes?.url}
-        width={200} height={280} quality={80} alt={product?.attributes.name}></Image>
+       { imageURL && <Image src={cmsURL + imageURL}
+        width={imageResolution?.width || 400} height={imageResolution?.height || 400} quality={80} alt={product?.attributes.name}></Image>}
       </div>
   
-      <div className={styles.btn}>
-       <div className={styles.price} >{product?.attributes.price} <span>₽</span></div>
-        </div>
+
+       <div className={styles.price} >{product?.attributes.price || undefined} <span>₽</span></div>
+      
         </Link>
     
      
