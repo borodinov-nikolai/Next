@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './home.module.scss'
-import Carousel from '@/components/HomePage/Carouse'
+import Carousel from '@/components/HomePage/carousel'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
 import { getCarousel, getNewProducts } from '@/http/cmsAPI';
 import { Products } from '@/interfaces/Products';
