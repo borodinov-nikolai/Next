@@ -1,24 +1,45 @@
 'use client';
 import React, { useState } from 'react'
-import styles from './newProductsSlider.module.scss'
+import styles from './productsSlider.module.scss'
 import { Products } from '@/interfaces/Products'
-import ProductCard from '@/components/CatalogPage/roductCar'
+import ProductCard from '@/components/CatalogPage/productCard'
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons'
 
 interface Props {
     products:  Products
 }
 
-export const NewProductsSlider: React.FC<Props> = ({products}) => {
+const ProductsSlider: React.FC<Props> = ({products}) => {
     const [shift, setShift] = useState<number>(0)
-
-
+    const count = products.data.length - 4
+    const productWidth = 640
+    
+console.log(products.data.length)
   const leftShift = ()=> {
-    setShift( shift + 400)
+    if(count % 2 === 0) {
+        if( shift < productWidth * count/2){
+            setShift( shift + productWidth)
+        }
+        } else {
+            if( shift < productWidth * (count-1)/2 ) {
+                setShift( shift + productWidth)
+            }
+        }
+    
   }
 
   const rightShift = ()=> {
-    setShift( shift - 400)
+    if(count % 2 === 0) {
+        if( shift > -productWidth * count/2){
+            setShift( shift - productWidth)
+        }
+        } else {
+            if( shift > -productWidth * (count-1)/2 ) {
+                setShift( shift - productWidth)
+            }
+        }
+    
+
   }
 
   return (
@@ -41,3 +62,7 @@ export const NewProductsSlider: React.FC<Props> = ({products}) => {
 
   )
 }
+
+
+
+export default ProductsSlider;

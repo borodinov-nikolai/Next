@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./catalog.module.scss";
 import { getProducts } from "@/http/cmsAPI";
-import ProductCard from "@/components/CatalogPage/roductCar";
+import ProductCard from "@/components/CatalogPage/productCard";
 import Platforms from "@/components/CatalogPage/Filters/Platforms";
 import Genres from "@/components/CatalogPage/Filters/Genres";
 import QueryBuilder from "@/components/CatalogPage/Filters/queryBuilder";

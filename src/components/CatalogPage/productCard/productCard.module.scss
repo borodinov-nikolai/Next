@@ -1,6 +1,3 @@
-
-
-
 .root {
     position: relative;
     user-select: none;
@@ -10,14 +7,7 @@
     transition: box-shadow 0.3s;
     background-color: rgb(227, 227, 227);
 
-
-
- 
-
-
-
     .image {
-       
         img {
             height: 300px;
             width: 100%;
@@ -30,7 +20,7 @@
         text-align: center;
     }
 
-    .price{
+    .price {
         background-color: rgba(0, 0, 0, 0.597);
         padding: 4px 7px;
         position: absolute;
@@ -40,39 +30,39 @@
         font-size: 20px;
         border-radius: 10px 0px 10px 0px;
         width: max-content;
-    
 
         span {
             font-size: 18px;
         }
-        
-
-       
     }
 }
 
 .root:hover {
-   box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
+    box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
 }
 
 
-   //sizes
 
-   .medium {
+
+
+
+//sizes
+
+
+.medium {
     height: 300px;
     width: 200px;
 }
+
 
 .large {
     height: 450px;
     width: 300px;
 
     .image {
-
         img {
             height: 450px;
             width: 100%;
         }
-       
     }
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './home.module.scss'
-import Carousel from '@/components/HomePage/Carousel'
+import Carousel from '@/components/HomePage/Carouse'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
 import { getCarousel, getNewProducts } from '@/http/cmsAPI';
 import { Products } from '@/interfaces/Products';
-import { NewProductsSlider } from '@/components/HomePage/newProductsSlider';
+import ProductsSlider from '@/components/HomePage/productsSlider';
+
 
 
 
@@ -25,7 +26,7 @@ const Home = async () => {
        </div>
 
        <div className={styles.new} >Горячие новинки!</div>
-         { newProducts && < NewProductsSlider products={ newProducts} />}
+         { newProducts && <ProductsSlider products={ newProducts} />}
 
        <div className={styles.info} >
        <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
