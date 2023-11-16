@@ -25,8 +25,8 @@ const Home = async () => {
         {carouselItems && <Carousel data={carouselItems} />}
        </div>
 
-       <div className={styles.new} >Горячие новинки!</div>
-         { newProducts && <ProductsSlider products={ newProducts} />}
+       <div className={styles.new} >Новое на сайте:</div>
+         <div className={styles.new_slider}>{ newProducts && <ProductsSlider products={ newProducts} />}</div>
 
        <div className={styles.info} >
        <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
