@@ -9,6 +9,7 @@
         overflow: hidden;
 
         .leftArrow {
+            user-select: none;
             cursor: pointer;
             position: absolute;
             left: 0px;
@@ -29,6 +30,7 @@
         }
 
         .rightArrow {
+            user-select: none;
             cursor: pointer;
             position: absolute;
             right: 0px;

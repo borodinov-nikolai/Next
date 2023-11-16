@@ -9,7 +9,6 @@ import { ProductData } from '@/interfaces/Products'
 
 
 
-
 const Product = async ({params}:{params:{product:string}}) => {
 
      
