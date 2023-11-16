@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import styles from './productCard.module.scss'
 import Image from 'next/image'
@@ -15,7 +16,7 @@ interface Props {
 }
 
 
-const ProductCard: React.FC<Props> = async ({product, size='medium', imageResolution}) => {
+const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution}) => {
   
 const cmsURL =  process.env.NEXT_PUBLIC_CMS_IMG_URL
 const imageURL = product?.attributes?.image?.data?.attributes?.url

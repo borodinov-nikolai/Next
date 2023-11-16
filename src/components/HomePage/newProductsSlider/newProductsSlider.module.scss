@@ -1,0 +1,56 @@
+
+
+
+.root {
+    padding-top: 50px;
+    position: relative;
+     
+
+
+    .cardHolder{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+
+        .leftArrow {
+            cursor: pointer;
+            position: absolute;
+            left: -15px;
+            top: 50%;
+           z-index: 1;
+           background-color: white;
+            border-radius: 50%;
+
+            svg {
+                font-size: 40px;
+                font-weight: 100;
+            }
+        }
+
+        .rightArrow {
+            cursor: pointer;
+            position: absolute;
+            right: -15px;
+            top: 50%;
+           z-index: 1;
+           background-color: white;
+            border-radius: 50%;
+
+            svg {
+                font-size: 40px;
+                font-weight: 100;
+            }
+        }
+    
+    
+       .cardHolder_inner {
+          width: 10000px;
+          display: grid;
+          grid-template-columns: repeat(5, max-content);
+          grid-template-rows: auto;
+          gap: 20px;
+          align-content: center;
+          justify-content: center;
+       }}
+}

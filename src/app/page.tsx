@@ -4,7 +4,7 @@ import Carousel from '@/components/HomePage/Carousel'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
 import { getCarousel, getNewProducts } from '@/http/cmsAPI';
 import { Products } from '@/interfaces/Products';
-import ProductCard from '@/components/CatalogPage/ProductCard';
+import { NewProductsSlider } from '@/components/HomePage/newProductsSlider';
 
 
 
@@ -25,17 +25,7 @@ const Home = async () => {
        </div>
 
        <div className={styles.new} >Горячие новинки!</div>
-       <div className={styles.cardHolder} > 
-         <div className={styles.cardHolder_inner}>
-           {
-            newProducts && newProducts.data.map((product)=> {
-              return (
-                <ProductCard product={product} size='large' imageResolution={{height:500, width:500}} />
-              )
-            })
-           }
-         </div>
-       </div>
+         { newProducts && < NewProductsSlider products={ newProducts} />}
 
        <div className={styles.info} >
        <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
