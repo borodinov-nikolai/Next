@@ -14,7 +14,7 @@ const Home = async () => {
   const carouselItems : CarouselItemData[] | undefined = await getCarousel();
   const newProducts : Products | undefined = await getNewProducts();
 
-  console.log()
+ 
  
  
   return (

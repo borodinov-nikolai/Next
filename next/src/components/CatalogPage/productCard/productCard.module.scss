@@ -1,3 +1,9 @@
+
+.description {
+    position: absolute;
+    z-index: 10;
+}
+
 .root {
     position: relative;
     user-select: none;
@@ -6,6 +12,9 @@
     overflow: hidden;
     transition: box-shadow 0.3s;
     background-color: rgb(227, 227, 227);
+
+    
+  
 
     .image {
         img {
@@ -50,11 +59,15 @@
             font-size: 18px;
         }
     }
+
+
+     
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
+    }
+
 }
 
-.root:hover {
-    box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
-}
 
 
 

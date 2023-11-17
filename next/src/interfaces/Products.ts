@@ -22,6 +22,7 @@ export interface Products {
   
   export interface ProductAttributes {
     name: string
+    productName: string
     productID: string
     buyURL: string
     price: number
