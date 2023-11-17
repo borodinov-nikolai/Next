@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 interface Props {
  
-  menulist?: {
+  menuList: {
     id: number;
     name: string,
     href: string
@@ -18,7 +18,7 @@ interface Props {
 }
 
 
-const Offcanvas: React.FC<Props> = ({ menulist, closeWidth }) => {
+const Offcanvas: React.FC<Props> = ({ menuList, closeWidth }) => {
   const [show, setShow] = React.useState<boolean>(false);
  
 
@@ -79,7 +79,7 @@ const Offcanvas: React.FC<Props> = ({ menulist, closeWidth }) => {
         <div className={styles.inner} >
           <ul className={styles.menu} >
             {
-              menulist?.map(({id, name, href}) => {
+              menuList?.map(({id, name, href}) => {
                 return <Link key={id} href={href} ><li  className={styles.menuItem} onClick={()=>setShow(false)} >{name}</li></Link>
               })
             }

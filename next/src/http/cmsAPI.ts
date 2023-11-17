@@ -12,7 +12,7 @@ import { Product, Products } from "@/interfaces/Products";
     try {
         
     
-        const {data}: {data: Products} = await $cmsAPI.get(`/products?${queryString?queryString:'sort=price:asc'}&populate=*`)
+        const {data}: {data: Products} = await $cmsAPI.get(`/products?${queryString?queryString:'sort=price:asc'}&populate[0]=image&populate[1]=platform.icon`)
     
         
         return data
@@ -26,7 +26,7 @@ export const getNewProducts = async ()=> {
     try {
         
     
-        const {data}: {data: Products} = await $cmsAPI.get(`/products?filters[new][$eq]=true&populate=*`)
+        const {data}: {data: Products} = await $cmsAPI.get(`/products?filters[new][$eq]=true&populate[0]=image&populate[1]=platform.icon`)
     
         
         return data
@@ -42,7 +42,7 @@ export const getCarousel = async ()=> {
     
         const {data} :{data: CarouselItems } = await $cmsAPI.get(`/carousel-items?populate=*`)
      
-        return data?.data
+        return data.data
 
     } catch(e) {
         console.error(e)
@@ -71,7 +71,7 @@ export const getGenres = async()=> {
 
 export const getPlatforms = async ()=> {
     try {
-        const {data}:{data:Platforms} = await $cmsAPI.get('/platforms')
+        const {data}:{data:Platforms} = await $cmsAPI.get('/platforms?populate=*')
         return data.data
     } catch(e) {
         console.error(e)

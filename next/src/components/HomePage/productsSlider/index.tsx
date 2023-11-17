@@ -14,7 +14,7 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
     const count = products.data.length - 5
     const productWidth = 440
     
-console.log(products.data.length)
+
   const leftShift = ()=> {
     if(count % 2 === 0) {
         if( shift < productWidth * count/2){
@@ -51,7 +51,7 @@ console.log(products.data.length)
           {
            products && products.data.map((product)=> {
              return (
-               <ProductCard product={product} size='medium' imageResolution={{height:500, width:500}} />
+               <ProductCard key={product.id} product={product} size='medium' imageResolution={{height:500, width:500}} />
              )
            })
           }

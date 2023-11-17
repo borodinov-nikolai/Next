@@ -1,5 +1,6 @@
 import { Image} from "./Image"
 import { Meta } from "./Meta"
+import { Platform} from "./Platforms"
 
 
 
@@ -30,6 +31,7 @@ export interface Products {
     updatedAt: string
     publishedAt: string
     image: Image
+    platform: Platform
   }
   
 

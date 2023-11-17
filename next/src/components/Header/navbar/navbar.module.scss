@@ -1,0 +1,19 @@
+
+
+
+
+.root {
+    align-items: end;
+    display: flex;
+    gap: 20px;
+
+ 
+    .item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 48px;
+    }
+
+   
+}

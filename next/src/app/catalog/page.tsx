@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./catalog.module.scss";
-import { getProducts } from "@/http/cmsAPI";
+import { getGenres, getPlatforms, getProducts } from "@/http/cmsAPI";
 import ProductCard from "@/components/CatalogPage/productCard";
-import Platforms from "@/components/CatalogPage/Filters/Platforms";
 import Genres from "@/components/CatalogPage/Filters/Genres";
 import QueryBuilder from "@/components/CatalogPage/Filters/queryBuilder";
 import Search from "@/components/CatalogPage/Filters/search";
@@ -11,6 +10,7 @@ import Paginations from "@/components/CatalogPage/pagination";
 import qs from "qs";
 import { ProductData } from "@/interfaces/Products";
 import { DefaultValues } from "@/interfaces/App";
+import Platforms from "@/components/CatalogPage/Filters/platforms";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +23,10 @@ const Catalog = async ({
 
   const queryString = qs.stringify(searchParams);
 
-  let products = await getProducts(queryString);
+  const products = await getProducts(queryString);
+  const platforms = await getPlatforms();
+  const genres = await getGenres();
+
   const parsedQS: unknown = qs.parse(queryString);
 
   const defaultValues = parsedQS as DefaultValues;
@@ -32,7 +35,7 @@ const Catalog = async ({
     <div className={styles.root}>
       <QueryBuilder defaultValues={defaultValues} />
       <div className={styles.platforms}>
-        <Platforms defaultValue={defaultValues?.filters?.platforms?.name} />
+        { platforms && <Platforms data={platforms}  defaultValue={defaultValues?.filters?.platforms?.name} />}
       </div>
 
       <div className={styles.search}>
@@ -46,7 +49,7 @@ const Catalog = async ({
 
       <div className={styles.genres_title}>Категории:</div>
       <div className={styles.genres}>
-        <Genres defaultValue={defaultValues?.filters?.genres?.name} />
+        {genres && <Genres data={genres} defaultValue={defaultValues?.filters?.genres?.name} />}
       </div>
       <div className={styles.product_cards}>
         {products?.data?.map((product: ProductData) => {

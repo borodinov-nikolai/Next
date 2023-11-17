@@ -38,11 +38,11 @@
       "target": "api::genre.genre",
       "mappedBy": "products"
     },
-    "platforms": {
+    "platform": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::platform.platform",
-      "mappedBy": "products"
+      "inversedBy": "products"
     },
     "new": {
       "type": "boolean"

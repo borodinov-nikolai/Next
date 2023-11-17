@@ -1,28 +1,48 @@
+'use client'
 import React from 'react'
 import styles from './platforms.module.scss'
-import { getPlatforms } from '@/http/cmsAPI'
-import ChangePlatform from './changePlatform';
+import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks';
+import { setPlatform } from '@/redux_toolkit/slices/filtersSlice';
+import { setPage } from '@/redux_toolkit/slices/paginationSlice';
+import { PlatformData } from '@/interfaces/Platforms';
+import Image from 'next/image';
 
 
-const Platforms = async ({defaultValue}:{defaultValue:string|undefined}) => {
+interface Props {
+  data: PlatformData[],
+  defaultValue: string | undefined
+}
 
 
+const Platforms : React.FC<Props> = ({defaultValue, data}) => {
+  const { platform } = useAppSelector((state) => state.filters)
+  const dispatch = useAppDispatch()
+ const cmsURL = process.env.NEXT_PUBLIC_CMS_IMG_URL
 
+  if(!defaultValue) {
+    defaultValue = 'Все'
+  }
 
-  const platforms = await getPlatforms();
-
+  const change = (name:string)=> {
+    dispatch(setPlatform(name));
+    dispatch(setPage(1))
+  }
+ 
 
 
   return (
-    <div className={styles.root}>
        
-            <ul className={styles.list} >
+            <ul className={styles.root} >
 
               {
-                platforms?.map((platform:{id:number, attributes: {name:string}})=> {
-                  return (<ChangePlatform name={platform?.attributes?.name} defaultValue={defaultValue} key={platform?.id} >
-                  {platform?.attributes?.name}
-                    </ChangePlatform>)
+                data?.map(({id, attributes})=> {
+                  const iconURL = attributes.icon?.data?.attributes?.url
+
+                  return ( <li  key={id} className={styles.item} style={(platform ? platform : defaultValue) === attributes.name ? { background: 'rgb(255, 255, 255)', color: 'black', borderRadius: '10px' } : undefined}
+                   onClick={ ()=>change(attributes.name)}>
+                     <div className={styles.icon}>{ iconURL && <Image src={cmsURL + iconURL} width={30} height={30} alt={attributes.name}/>}</div> 
+                     <div className={styles.name} >{attributes.name}</div>
+                     </li>)
                 
                 })
               }
@@ -30,7 +50,6 @@ const Platforms = async ({defaultValue}:{defaultValue:string|undefined}) => {
             </ul>
             
    
-    </div>
   )
 }
 

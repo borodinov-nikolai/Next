@@ -752,15 +752,17 @@ export interface ApiPlatformPlatform extends Schema.CollectionType {
     singularName: 'platform';
     pluralName: 'platforms';
     displayName: 'Platform';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
+    icon: Attribute.Media;
     products: Attribute.Relation<
       'api::platform.platform',
-      'manyToMany',
+      'oneToMany',
       'api::product.product'
     >;
     createdAt: Attribute.DateTime;
@@ -803,9 +805,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::genre.genre'
     >;
-    platforms: Attribute.Relation<
+    platform: Attribute.Relation<
       'api::product.product',
-      'manyToMany',
+      'manyToOne',
       'api::platform.platform'
     >;
     new: Attribute.Boolean;

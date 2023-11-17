@@ -1,29 +1,42 @@
 
 
 
-.root {
-    padding: 0 40px;
-    background-color: rgb(35, 35, 35);
-    height: 50px;
+   
 
-    .list {
-        height: 100%;
+    .root {
+        padding: 0 40px;
+        background-color: rgb(35, 35, 35);
+        height: 50px;
         align-items: center;
         display: flex;
         gap: 20px;
         
-        li {
+        .item {
+            user-select: none;
+            display: flex;
+            gap: 5px;
+            align-items: center;
             padding: 5px 10px;
             cursor: pointer;
             color: white;
+
+            .icon {
+                   height: 25px;
+               img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            
+
+            &:hover {
+                cursor: pointer;
+                padding: 5px 10px;
+                background-color: rgb(255, 255, 255);
+                color: black;
+                border-radius: 10px;
+            }
         }
 
-        li:hover {
-            cursor: pointer;
-            padding: 5px 10px;
-            background-color: rgb(255, 255, 255);
-            color: black;
-            border-radius: 10px;
-        }
+       
     }
-}
