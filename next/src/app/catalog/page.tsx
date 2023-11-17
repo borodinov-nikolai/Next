@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./catalog.module.scss";
 import { getGenres, getPlatforms, getProducts } from "@/http/cmsAPI";
 import ProductCard from "@/components/CatalogPage/productCard";
-import Genres from "@/components/CatalogPage/Filters/Genre";
+import Genres from "@/components/CatalogPage/Filters/genres";
 import QueryBuilder from "@/components/CatalogPage/Filters/queryBuilder";
 import Search from "@/components/CatalogPage/Filters/search";
 import Sort from "@/components/CatalogPage/Filters/sort";
@@ -10,7 +10,7 @@ import Paginations from "@/components/CatalogPage/pagination";
 import qs from "qs";
 import { ProductData } from "@/interfaces/Products";
 import { DefaultValues } from "@/interfaces/App";
-import Platforms from "@/components/CatalogPage/Filters/platform";
+import Platforms from "@/components/CatalogPage/Filters/platforms";
 
 export const dynamic = "force-dynamic";
 
