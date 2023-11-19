@@ -13,8 +13,8 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
     const [shift, setShift] = useState<number>(0)
     const count = products.data.length - 5
     const productWidth = 440
-    
-
+    const data = [...products.data, ...products.data,...products.data]
+  console.log(data.length)
   const leftShift = ()=> {
     if(count % 2 === 0) {
         if( shift < productWidth * count/2){
@@ -41,7 +41,6 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
     
 
   }
-
   return (
 
     <div className={styles.root}>
@@ -49,9 +48,9 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
         <LeftCircleOutlined onClick={leftShift} className={styles.leftArrow} />
         <div style={{marginLeft: String(shift) + 'px'}} className={styles.cardHolder_inner}>
           {
-           products && products.data.map((product)=> {
+           products && data.map((product, i)=> {
              return (
-               <ProductCard key={product.id} product={product} size='medium' imageResolution={{height:500, width:500}} />
+               <ProductCard key={i} product={product} size='medium' imageResolution={{height:500, width:500}} />
              )
            })
           }

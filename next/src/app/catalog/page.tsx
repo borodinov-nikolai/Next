@@ -52,7 +52,7 @@ const Catalog = async ({
         {genres && <Genres data={genres} defaultValue={defaultValues?.filters?.genres?.name} />}
       </div>
       <div className={styles.product_cards}>
-        {products?.data?.map((product: ProductData) => {
+        { products && products.data.map((product: ProductData) => {
           return (
             <div key={product.id} className={styles.card}>
               <ProductCard  product={product} size="medium" />
