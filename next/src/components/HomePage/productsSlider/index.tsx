@@ -13,8 +13,16 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
     const [shift, setShift] = useState<number>(0)
     const count = products.data.length - 5
     const productWidth = 440
-    const data = [...products.data, ...products.data,...products.data]
-  console.log(data.length)
+
+    // push products to arr for infinity scroll
+    const data = [];
+    for (let i=0; i<2; i++ ) {
+      data.push(...products.data)
+      }
+
+
+      console.log(data)
+
   const leftShift = ()=> {
     if(count % 2 === 0) {
         if( shift < productWidth * count/2){
