@@ -9,8 +9,9 @@
         justify-content: center;
         width: 100%;
         height: auto;
-        overflow-x: scroll;
-        scrollbar-width: none;
+        overflow: hidden;
+        // overflow-x: scroll;
+        // scrollbar-width: none;
 
         &::-webkit-scrollbar {
             width: 0;
@@ -68,12 +69,11 @@
             display: flex;
              gap: 20px;
              justify-content: start;
-            // transition: margin-left 0.3s;
             animation-timing-function: linear;
             animation-duration: 80s;
             animation-iteration-count: infinite;
             animation-name: slide;
-
+   
             @keyframes slide {
                 from {
                     margin-left: 0;
@@ -85,6 +85,14 @@
                 }
             }
         }
+
+      
+          
     }
+
+   
+
 }
+
+
 

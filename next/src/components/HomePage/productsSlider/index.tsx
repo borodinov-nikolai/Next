@@ -1,68 +1,49 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './productsSlider.module.scss'
 import { Products } from '@/interfaces/Products'
 import ProductCard from '@/components/CatalogPage/productCard'
-import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons'
+
 
 interface Props {
     products:  Products
 }
 
 const ProductsSlider: React.FC<Props> = ({products}) => {
-    const [shift, setShift] = useState<number>(0)
-    const count = products.data.length - 5
-    const productWidth = 440
+  
+const [state, setState] = useState<number>()
+const data = [...products.data,...products.data,...products.data]
 
     // push products to arr for infinity scroll
-    const data = [];
-    for (let i=0; i<2; i++ ) {
-      data.push(...products.data)
-      }
-
-
-      console.log(data)
-
-  const leftShift = ()=> {
-    if(count % 2 === 0) {
-        if( shift < productWidth * count/2){
-            setShift( shift + productWidth)
-        }
-        } else {
-            if( shift < productWidth * (count-1)/2 ) {
-                setShift( shift + productWidth)
-            }
-        }
     
-  }
+  //   useEffect(()=> {
+  //     const data = [];
+  //     for (let i=0; i<3; i++ ) {
+  // console.log('rerender')
+  
+  //       data.push(...products.data)
+  //       }
+  //   }, [])
+  
 
-  const rightShift = ()=> {
-    if(count % 2 === 0) {
-        if( shift > -productWidth * count/2){
-            setShift( shift - productWidth)
-        }
-        } else {
-            if( shift > -productWidth * (count-1)/2 ) {
-                setShift( shift - productWidth)
-            }
-        }
-    
 
-  }
+console.log(data)
+  
   return (
 
     <div className={styles.root}>
-        <div className={styles.cardHolder} >
-        <LeftCircleOutlined onClick={leftShift} className={styles.leftArrow} />
-        <div style={{marginLeft: String(shift) + 'px'}} className={styles.cardHolder_inner}>
+      <button onClick={()=> setState(Math.random())} >button</button>
+        <div 
+         className={styles.cardHolder} >
+
+        <div className={styles.cardHolder_inner}>
           {
-           products && data.map((product, i)=> {
+           products && data.map((product, index)=> {
              return (
-               <ProductCard key={i} product={product} size='medium' imageResolution={{height:500, width:500}} />
+               <ProductCard key={index} product={product} size='medium' imageResolution={{height:500, width:500}} />
              )
            })
           }
-          <RightCircleOutlined onClick={rightShift} className={styles.rightArrow} />
         </div>
           </div>
     </div>
