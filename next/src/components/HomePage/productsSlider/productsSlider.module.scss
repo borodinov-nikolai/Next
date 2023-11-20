@@ -10,8 +10,7 @@
         width: 100%;
         height: auto;
         overflow: hidden;
-        // overflow-x: scroll;
-        // scrollbar-width: none;
+   
 
         &::-webkit-scrollbar {
             width: 0;
@@ -19,60 +18,16 @@
 
        
 
-        // .leftArrow {
-        //     user-select: none;
-        //     cursor: pointer;
-        //     position: absolute;
-        //     transform: translate(0, 50%);
-        //     left: 0px;
-        //     bottom: 50%;
-        //     z-index: 1;
-        //     background-color: rgb(238, 238, 238);
-        //     border-radius: 50%;
-        //     transition: background-color 0.3s, box-shadow 0.3s;
-            
-        //     svg {
-        //         font-size: 58px;
-        //     }
-            
-        //     &:hover {
-        //         background-color: white;
-        //         box-shadow: 0px 0px 20px 0px black;
-        //     }
-        // }
-
-        // .rightArrow {
-        //     user-select: none;
-        //     cursor: pointer;
-        //     position: absolute;
-        //     right: 0px;
-        //     bottom: 50%;
-        //     transform: translate(0, 50%);
-        //     z-index: 1;
-        //     background-color: rgb(238, 238, 238);
-        //     border-radius: 50%;
-        //     transition: background-color 0.3s, box-shadow 0.3s;
- 
-
-        //     svg {
-        //         font-size: 58px;
-        //     }
-
-        //     &:hover {
-        //         background-color: white;
-        //         box-shadow: 0px 0px 20px 0px black;
-        //     }
-        // }
 
         .cardHolder_inner {
             width: max-content;
             display: flex;
              gap: 20px;
              justify-content: start;
-            animation-timing-function: linear;
-            animation-duration: 80s;
-            animation-iteration-count: infinite;
-            animation-name: slide;
+            // animation-timing-function: linear;
+            // animation-duration: 80s;
+            // animation-iteration-count: infinite;
+            // animation-name: slide;
    
             @keyframes slide {
                 from {

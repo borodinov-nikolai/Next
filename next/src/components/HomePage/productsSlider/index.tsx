@@ -32,7 +32,6 @@ console.log(data)
   return (
 
     <div className={styles.root}>
-      <button onClick={()=> setState(Math.random())} >button</button>
         <div 
          className={styles.cardHolder} >
 

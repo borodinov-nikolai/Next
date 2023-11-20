@@ -6,6 +6,7 @@ import StyledComponentsRegistry from '@/antDesign/AntdRegistry'
 import theme from '@/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
 import ReduxProvider from '@/redux_toolkit/reduxProvider'
+import Footer from '@/components/Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,6 +32,7 @@ export default function RootLayout({
         <div className="container">
         <Header/>
           {children}
+          <Footer/>
         </div>   </ReduxProvider>
        
           </StyledComponentsRegistry>

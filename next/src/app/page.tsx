@@ -5,6 +5,8 @@ import { CarouselItemData } from '@/interfaces/CarouselItems';
 import { getCarousel, getNewProducts } from '@/http/cmsAPI';
 import { Products } from '@/interfaces/Products';
 import ProductsSlider from '@/components/HomePage/productsSlider';
+import { Button } from 'antd';
+import Link from 'next/link';
 
 
 
@@ -24,8 +26,7 @@ const Home = async () => {
        <div>
         {carouselItems && <Carousel data={carouselItems} />}
        </div>
-
-       <div className={styles.new} >Новое на сайте:</div>
+       <div className={styles.new_title} >Новое на сайте:</div>
          <div className={styles.new_slider}>{ newProducts && <ProductsSlider products={ newProducts} />}</div>
 
        <div className={styles.info} >
