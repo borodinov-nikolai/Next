@@ -1,3 +1,7 @@
+@import './../../styles/variables.module.scss';
+
+
+
 .root {
    height: 200vh;
    display: grid;
@@ -46,16 +50,19 @@
 
    .product_cards {
       height: min-content;
+      justify-items: center;
       display: grid;
       padding: 0px 20px;
       grid-row: 3;
       grid-column: 2;
-      gap: 25px;
-      grid-template-columns: repeat(6, max-content);
-      grid-auto-rows: max-content;
-      grid-auto-flow: row;
-      justify-items: center;
+      grid-gap: 25px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
    }
+
+   .product_card {
+      width: 200px;
+   }
+
 
    .pagination {
       justify-self: center;
@@ -64,41 +71,62 @@
       align-self: center;
    }
 
-   @media (max-width: 1600px) {
-      .product_cards {
-         grid-template-columns: repeat(5, max-content);
-      }
-   }
+//    @include for-desktop-large {
+//       .product_cards {
+//          grid-template-columns: repeat(5, 1fr);
+//       }
+//    }
 
-   @media (max-width: 1400px) {
-      .product_cards {
-         grid-template-columns: repeat(4, max-content);
-      }
+//   @include for-desktop-medium {
+//    .product_cards {
+//       grid-template-columns: repeat(4, 1fr);
+//    }
+//   }
+
+  @include for-desktop-small {
+   .sort {
+      margin-right: 20px;
    }
-   @media (max-width: 1200px) {
-      .product_cards {
-         grid-template-columns: repeat(3, max-content);
-      }
+  }
+
+
+ @include for-tablet-landscape {
+   // .product_cards {
+   //    width: 95%;
+   //    margin: 0 auto;
+   //    grid-template-columns: none;
+   //    grid-auto-flow: row;
+   // }
+
+   .search {
+      justify-self: start;
+      margin-left: 20px;
    }
-   @media (max-width: 992px) {
-      .product_cards {
-         grid-template-columns: repeat(2, max-content);
-      }
+   .genres {
+      display: none;
    }
-   @media (max-width: 768px) {
-      .product_cards {
-         grid-template-columns: repeat(2, max-content);
-      }
+   .platforms {
+      display: none;
    }
-   @media (max-width: 576px) {
-      .genres_title {
+   .genres_title {
+      display: none;
+   }
+ }
+  
+ @include for-tablet-portrait {
+   .sort {
+      >span {
          display: none;
       }
-      .genres {
-         display: none;
-      }
-      .search_sort {
-         display: block;
-      }
    }
+   .search {
+      width: 200px;
+   }     
+
+ }
+  
+ @include for-phone {
+
+
+ }
 }

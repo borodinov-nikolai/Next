@@ -54,7 +54,7 @@ const Catalog = async ({
       <div className={styles.product_cards}>
         { products && products.data.map((product: ProductData) => {
           return (
-            <div key={product.id} className={styles.card}>
+            <div key={product.id} className={styles.product_card}>
               <ProductCard  product={product} size="medium" />
             </div>
           );
