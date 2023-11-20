@@ -1,3 +1,5 @@
+@import '../../../styles/variables.module.scss';
+
 
 .description {
     position: absolute;
@@ -67,7 +69,11 @@
         box-shadow: rgba(0, 0, 0, 0.542) 0px 0px 20px;
     }
 
+    
+
+  
 }
+
 
 
 
@@ -81,6 +87,7 @@
 .medium {
     height: 300px;
     width: 200px;
+
 }
 
 
@@ -93,5 +100,26 @@
             height: 450px;
             width: 100%;
         }
+    }
+}
+
+
+//for phone card size
+
+@include for-phone {
+    .root {
+        
+    
+    @include for-phone {
+        height: 450px;
+        width: 300px;
+        
+    .image {
+        img {
+            height: 450px;
+            width: 100%;
+        }
+    }
+    }
     }
 }

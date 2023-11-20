@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./catalog.module.scss";
 import { getGenres, getPlatforms, getProducts } from "@/http/cmsAPI";
 import ProductCard from "@/components/CatalogPage/productCard";
-import Genres from "@/components/CatalogPage/filters/genres";
+import Genres from "@/components/CatalogPage/filters/categories/genres";
 import QueryBuilder from "@/components/CatalogPage/filters/queryBuilder";
 import Search from "@/components/CatalogPage/filters/search";
 import Sort from "@/components/CatalogPage/filters/sort";
@@ -10,8 +10,8 @@ import Paginations from "@/components/CatalogPage/pagination";
 import qs from "qs";
 import { ProductData } from "@/interfaces/Products";
 import { DefaultValues } from "@/interfaces/App";
-import Platforms from "@/components/CatalogPage/filters/platforms";
-import Mobile_platforms from "@/components/CatalogPage/filters/mobile_platforms";
+import Platforms from "@/components/CatalogPage/filters/categories/platforms";
+import Mobile_platforms from "@/components/CatalogPage/filters/mobile_categories/mobile_platforms";
 
 export const dynamic = "force-dynamic";
 
@@ -35,11 +35,16 @@ const Catalog = async ({
   return (
     <div className={styles.root}>
       <QueryBuilder defaultValues={defaultValues} />
+
       <div className={styles.mobile_navbar} > 
       <div className={styles.mobile_platforms}>
-        <Mobile_platforms/>
+       {platforms &&  <Mobile_platforms data={platforms} defaultValue={defaultValues?.filters?.platforms?.name} />}
       </div>
+      {/* <div className={styles.mobile_genres}>
+
+      </div> */}
        </div>
+    
       <div className={styles.platforms}>
         { platforms && <Platforms data={platforms}  defaultValue={defaultValues?.filters?.platforms?.name} />}
       </div>
