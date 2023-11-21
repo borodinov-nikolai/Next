@@ -8,32 +8,13 @@
    grid-template-columns: max-content 1fr;
    grid-template-rows: max-content 80px min-content 180px;
 
-  
    .mobile_navbar {
       height: 50px;
-      position: relative;
-      display: none;
       width: 100%;
-      background-color: rgb(35, 35, 35);
       grid-row: 1;
-      grid-column: 1/3;
-
-      .mobile_platforms {
-         height: 100%;
-         width: 50%;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-      }
-
-      .mobile_genres {
-         height: 100%;
-         width: 50%;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-      }
+    grid-column: 1/3;
    }
+
 
    .platforms {
       grid-row: 1;
@@ -120,9 +101,7 @@
    .genres_title {
       display: none;
    }
-   .mobile_navbar {
-      display: block;
-   }
+  
  }
   
 

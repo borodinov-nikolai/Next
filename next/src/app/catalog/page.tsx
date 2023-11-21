@@ -11,7 +11,7 @@ import qs from "qs";
 import { ProductData } from "@/interfaces/Products";
 import { DefaultValues } from "@/interfaces/App";
 import Platforms from "@/components/CatalogPage/filters/categories/platforms";
-import Mobile_platforms from "@/components/CatalogPage/filters/mobile_categories/mobile_platforms";
+import Mobile_category from "@/components/CatalogPage/filters/mobile_categories";
 
 export const dynamic = "force-dynamic";
 
@@ -37,12 +37,7 @@ const Catalog = async ({
       <QueryBuilder defaultValues={defaultValues} />
 
       <div className={styles.mobile_navbar} > 
-      <div className={styles.mobile_platforms}>
-       {platforms &&  <Mobile_platforms data={platforms} defaultValue={defaultValues?.filters?.platform?.name} />}
-      </div>
-      <div className={styles.mobile_genres}>
-
-      </div>
+     <Mobile_category platforms={platforms} genres={genres} defaultValues={defaultValues} />
        </div>
     
       <div className={styles.platforms}>

@@ -1,0 +1,33 @@
+@import '../../../../styles/variables.module.scss';
+  
+   .root {
+    height: 100%;
+    position: relative;
+    display: none;
+    width: 100%;
+    background-color: rgb(35, 35, 35);
+    
+
+    .mobile_platforms {
+       height: 100%;
+       width: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+
+    .mobile_genres {
+       height: 100%;
+       width: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+
+
+    @include for-tablet-landscape {
+    
+            display: flex;
+         
+    }
+ }
