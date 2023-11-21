@@ -14,20 +14,9 @@ const ProductsSlider: React.FC<Props> = ({products}) => {
 const [state, setState] = useState<number>()
 const data = [...products.data,...products.data,...products.data]
 
-    // push products to arr for infinity scroll
     
-  //   useEffect(()=> {
-  //     const data = [];
-  //     for (let i=0; i<3; i++ ) {
-  // console.log('rerender')
-  
-  //       data.push(...products.data)
-  //       }
-  //   }, [])
-  
 
 
-console.log(data)
   
   return (
 
