@@ -24,10 +24,10 @@
             display: flex;
              gap: 20px;
              justify-content: start;
-            // animation-timing-function: linear;
-            // animation-duration: 80s;
-            // animation-iteration-count: infinite;
-            // animation-name: slide;
+            animation-timing-function: linear;
+            animation-duration: 80s;
+            animation-iteration-count: infinite;
+            animation-name: slide;
    
             @keyframes slide {
                 from {

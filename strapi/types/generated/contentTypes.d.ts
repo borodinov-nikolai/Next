@@ -831,36 +831,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
-export interface ApiValueValue extends Schema.CollectionType {
-  collectionName: 'values';
-  info: {
-    singularName: 'value';
-    pluralName: 'values';
-    displayName: 'Value';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::value.value',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::value.value',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -881,7 +851,6 @@ declare module '@strapi/types' {
       'api::genre.genre': ApiGenreGenre;
       'api::platform.platform': ApiPlatformPlatform;
       'api::product.product': ApiProductProduct;
-      'api::value.value': ApiValueValue;
     }
   }
 }

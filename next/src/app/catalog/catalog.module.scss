@@ -3,7 +3,7 @@
 
 
 .root {
-   height: max-content;
+   min-height: 200vh;
    display: grid;
    grid-template-columns: max-content 1fr;
    grid-template-rows: max-content 80px min-content 180px;
