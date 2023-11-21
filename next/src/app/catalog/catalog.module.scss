@@ -10,9 +10,9 @@
 
   
    .mobile_navbar {
+      height: 50px;
       position: relative;
       display: none;
-      height: 50px;
       width: 100%;
       background-color: rgb(35, 35, 35);
       grid-row: 1;
@@ -151,6 +151,10 @@
  
     .product_cards {
       grid-template-columns: 1fr;
+    }
+
+    .mobile_navbar {
+      height: 80px;
     }
 
 }

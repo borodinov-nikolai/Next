@@ -51,7 +51,7 @@ const QueryBuilder: React.FC<Props> = ({ defaultValues }) => {
             filters.platform === "Все"
               ? undefined
               : filters.platform ||
-                defaultValues?.filters?.platforms?.name ||
+                defaultValues?.filters?.platform?.name ||
                 undefined,
         },
         name: {

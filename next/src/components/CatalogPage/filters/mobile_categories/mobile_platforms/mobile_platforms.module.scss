@@ -1,39 +1,32 @@
-@import './../../../../../styles/variables.module.scss';
-
-
+@import "./../../../../../styles/variables.module.scss";
 
 .root {
-  
- 
-
-
-.current_platform {
+  .current_platform {
     display: flex;
     align-items: center;
     color: white;
     gap: 5px;
 
     .change_title {
-        font-size: 20px;
+      font-size: 20px;
     }
 
     .changed_item {
+      min-height: 40px;
       cursor: pointer;
       padding: 5px 10px;
       background-color: rgb(255, 255, 255);
       color: black;
       border-radius: 10px;
     }
-}
-
+  }
 
   .menu {
     // у родительского компонента должен быть position:relative;
     position: absolute;
     width: 100%;
-    top: 50px;
+    top: 49px;
     left: 0;
-    top: 40px;
     background-color: rgb(35, 35, 35);
     z-index: 1;
 
@@ -56,11 +49,10 @@
     width: 100%;
     display: flex;
     // gap: 10px;
-
   }
 
-      
   .item {
+    min-height: 40px;
     user-select: none;
     display: flex;
     gap: 5px;
@@ -70,45 +62,57 @@
     color: white;
 
     .icon {
-           height: 25px;
-       img {
-            height: 100%;
-            width: auto;
-        }
+      height: 25px;
+      img {
+        height: 100%;
+        width: auto;
+      }
     }
-    
 
     &:hover {
-        cursor: pointer;
-        padding: 5px 10px;
-        background-color: rgb(255, 255, 255);
-        color: black;
-        border-radius: 10px;
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: rgb(255, 255, 255);
+      color: black;
+      border-radius: 10px;
     }
-}
+  }
 
+  @include for-tablet-portrait {
+    .menu_list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
 
-     @include for-tablet-portrait {
-      .menu_list {
-       display: grid;
-       grid-template-columns: repeat(2, 1fr);
-       grid-gap: 10px;
-
-        .item {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-      }
-     }
-
-
-     @include for-phone {
-      .menu_list {
+      .item {
+        width: 95%;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
       }
-     }
+    }
+  }
 
+  @include for-phone {
+    width: 80%;
+    .current_platform {
+      flex-direction: column;
+      .change_title {
+        font-size: 12px;
+      }
+      .changed_item {
+        width: 100%;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+      }
+    }
 
+    .menu {
+      top: 79px;
+    }
+    .menu_list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }

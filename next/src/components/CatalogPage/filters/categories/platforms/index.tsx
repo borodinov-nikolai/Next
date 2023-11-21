@@ -19,6 +19,10 @@ const Platforms : React.FC<Props> = ({defaultValue, data}) => {
   const dispatch = useAppDispatch()
  const cmsURL = process.env.NEXT_PUBLIC_CMS_IMG_URL
 
+
+
+   console.log(defaultValue)
+
   if(!defaultValue) {
     defaultValue = 'Все'
   }
@@ -35,7 +39,7 @@ const Platforms : React.FC<Props> = ({defaultValue, data}) => {
             <ul className={styles.root} >
 
               {
-                data?.map(({id, attributes})=> {
+                data.map(({id, attributes})=> {
                   const iconURL = attributes.icon?.data?.attributes?.url
 
                   return ( <li  key={id} className={styles.item} style={(platform ? platform : defaultValue) === attributes.name ? { background: 'rgb(255, 255, 255)', color: 'black', borderRadius: '10px' } : undefined}

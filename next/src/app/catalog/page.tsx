@@ -30,7 +30,7 @@ const Catalog = async ({
 
   const parsedQS: unknown = qs.parse(queryString);
 
-  const defaultValues = parsedQS as DefaultValues;
+  const defaultValues = parsedQS as DefaultValues; 
 
   return (
     <div className={styles.root}>
@@ -38,15 +38,15 @@ const Catalog = async ({
 
       <div className={styles.mobile_navbar} > 
       <div className={styles.mobile_platforms}>
-       {platforms &&  <Mobile_platforms data={platforms} defaultValue={defaultValues?.filters?.platforms?.name} />}
+       {platforms &&  <Mobile_platforms data={platforms} defaultValue={defaultValues?.filters?.platform?.name} />}
       </div>
-      {/* <div className={styles.mobile_genres}>
+      <div className={styles.mobile_genres}>
 
-      </div> */}
+      </div>
        </div>
     
       <div className={styles.platforms}>
-        { platforms && <Platforms data={platforms}  defaultValue={defaultValues?.filters?.platforms?.name} />}
+        { platforms && <Platforms data={platforms}  defaultValue={defaultValues?.filters?.platform?.name} />}
       </div>
 
       <div className={styles.search}>

@@ -5,7 +5,7 @@ export interface DefaultValues {
     sort: string[];
     filters: {
       genres: { name: string };
-      platforms: { name: string };
+      platform: { name: string };
       name: Record<string, string>;
     };
   }
