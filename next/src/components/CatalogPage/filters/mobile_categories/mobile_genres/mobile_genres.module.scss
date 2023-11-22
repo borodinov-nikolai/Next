@@ -13,11 +13,14 @@
 
     .changed_item {
       min-height: 40px;
+      min-width: 150px;
       cursor: pointer;
       padding: 5px 10px;
       background-color: rgb(255, 255, 255);
       color: black;
       border-radius: 10px;
+      display: flex;
+      justify-content: center;
     }
   }
 
