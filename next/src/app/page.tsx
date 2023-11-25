@@ -2,16 +2,26 @@ import React from 'react'
 import styles from './home.module.scss'
 import Carousel from '@/components/HomePage/carousel'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
-import { getCarousel, getNewProducts } from '@/http/cmsAPI';
+import { getCarousel, getMetaData, getNewProducts } from '@/http/cmsAPI';
 import { Products } from '@/interfaces/Products';
 import ProductsSlider from '@/components/HomePage/productsSlider';
-import { Button } from 'antd';
-import Link from 'next/link';
+
+
+ export const metadata = async () => {
+      const data = await getMetaData('home')
+       
+      return ({
+        title: data?.attributes.seo.title,
+        description: data?.attributes.seo.description
+      })
+}
 
 
 
 
 const Home = async () => {
+
+ 
 
   const carouselItems : CarouselItemData[] | undefined = await getCarousel();
   const newProducts : Products | undefined = await getNewProducts();

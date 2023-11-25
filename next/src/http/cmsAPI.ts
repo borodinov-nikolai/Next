@@ -1,5 +1,6 @@
 import { $cmsAPI } from "@/axios/config";
 import { CarouselItems } from "@/interfaces/CarouselItems";
+import { Content } from "@/interfaces/Content";
 import { Genres } from "@/interfaces/Genres";
 import { Platforms } from "@/interfaces/Platforms";
 import { Product, Products } from "@/interfaces/Products";
@@ -7,8 +8,21 @@ import { Product, Products } from "@/interfaces/Products";
 
 
 
+export const getMetaData = async (name:string) => {
 
- export const getProducts = async (queryString:any)=> {
+      try {
+        const {data} : {data:Content} = await $cmsAPI.get(`/${name}-page?populate[0]=seo`)
+        return data.data
+      } catch(e) {
+        console.error(e)
+      }
+}
+
+
+
+
+
+ export const getProducts = async (queryString:string)=> {
     try {
         
     

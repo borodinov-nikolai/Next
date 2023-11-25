@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "howbuy_pages",
+  "info": {
+    "singularName": "howbuy-page",
+    "pluralName": "howbuy-pages",
+    "displayName": "Howbuy_page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

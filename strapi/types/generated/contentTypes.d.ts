@@ -717,6 +717,7 @@ export interface ApiGenreGenre extends Schema.CollectionType {
     singularName: 'genre';
     pluralName: 'genres';
     displayName: 'Genre';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -728,6 +729,7 @@ export interface ApiGenreGenre extends Schema.CollectionType {
       'manyToMany',
       'api::product.product'
     >;
+    list: Attribute.Enumeration<['title', 'text']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -739,6 +741,69 @@ export interface ApiGenreGenre extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::genre.genre',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home_page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.meta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHowbuyPageHowbuyPage extends Schema.SingleType {
+  collectionName: 'howbuy_pages';
+  info: {
+    singularName: 'howbuy-page';
+    pluralName: 'howbuy-pages';
+    displayName: 'Howbuy_page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.meta'>;
+    title: Attribute.String;
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::howbuy-page.howbuy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::howbuy-page.howbuy-page',
       'oneToOne',
       'admin::user'
     > &
@@ -849,6 +914,8 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::carousel-item.carousel-item': ApiCarouselItemCarouselItem;
       'api::genre.genre': ApiGenreGenre;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::howbuy-page.howbuy-page': ApiHowbuyPageHowbuyPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::product.product': ApiProductProduct;
     }
