@@ -18,18 +18,16 @@ const menuList = [{id:1, name:'Главная', href: '/' }, {id:2, name:'Кат
   return (
     <div className={styles.root}>
   
-    <div className={styles.navbar} >
+      <div className={styles.navbar} >
 
-     <div className={styles.burger}>
-     {menuList && <Offcanvas menuList={menuList} closeWidth={992} />}
-     </div>
-     
-         <div className={styles.left_menu} >{ menuList && <Navbar menuList={menuList} />}</div>
-
-            <ul className={styles.right_menu} >
-              <li className={styles.right_menu_item} > Валюта: $ </li>
-            </ul>
-    </div>
+       <div className={styles.burger}>
+       {menuList && <Offcanvas menuList={menuList} closeWidth={992} />}
+       </div>
+      
+           <div className={styles.left_menu} >{ menuList && <Navbar menuList={menuList} />}</div>
+            
+      </div>
+  
 
     </div>
 

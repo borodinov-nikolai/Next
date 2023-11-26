@@ -22,7 +22,7 @@ const Mobile_platforms : React.FC<Props> = ({defaultValue, data, handleShowPlatf
  const cmsURL = process.env.NEXT_PUBLIC_CMS_IMG_URL
 
 
-console.log(defaultValue)
+
 
   if(!defaultValue) {
     defaultValue = 'Все'

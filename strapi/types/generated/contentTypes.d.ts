@@ -791,8 +791,6 @@ export interface ApiHowbuyPageHowbuyPage extends Schema.SingleType {
   };
   attributes: {
     seo: Attribute.Component<'seo.meta'>;
-    title: Attribute.String;
-    text: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

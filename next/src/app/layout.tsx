@@ -28,8 +28,9 @@ export default function RootLayout({
         <div className="container">
         <Header/>
           {children}
+        </div>  
           <Footer/>
-        </div>   </ReduxProvider>
+         </ReduxProvider>
        
           </StyledComponentsRegistry>
         </ConfigProvider>

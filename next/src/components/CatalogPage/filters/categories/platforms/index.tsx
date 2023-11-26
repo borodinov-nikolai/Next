@@ -21,7 +21,7 @@ const Platforms : React.FC<Props> = ({defaultValue, data}) => {
 
 
 
-   console.log(defaultValue)
+
 
   if(!defaultValue) {
     defaultValue = 'Все'

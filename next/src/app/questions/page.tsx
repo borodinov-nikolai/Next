@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from './questions.module.scss'
 const Questions = () => {
   return (
-    <div>Questions</div>
+    <div className={styles.root} >Questions</div>
   )
 }
 

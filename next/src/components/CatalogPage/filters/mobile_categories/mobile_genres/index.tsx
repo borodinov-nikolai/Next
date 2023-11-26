@@ -21,7 +21,7 @@ const Mobile_genres : React.FC<Props> = ({defaultValue, data, handleShowGenres, 
   const dispatch = useAppDispatch()
 
 
-console.log(defaultValue)
+
 
   if(!defaultValue) {
     defaultValue = 'Все'
