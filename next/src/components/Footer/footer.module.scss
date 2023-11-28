@@ -1,8 +1,60 @@
-
-
+@import '../../styles/variables.module.scss';
 
 .root {
     margin-top: 100px;
-    height: 150px;
+    padding: 25px 0;
+    height: max-content;
     background-color: rgb(16, 15, 15);
+    color: white;
+
+
+   
+    
+    .navigation_list {
+        display: flex;
+        gap: 5%;
+        justify-content: center;
+        
+    }
+
+    .navigation_item {
+      
+
+        a {
+            color: rgb(201, 201, 201);
+        }
+    }
+
+    .support  {
+        font-size: 24px;;
+        margin-top: 15px;
+        text-align: center;
+        color: rgb(37, 121, 37);
+
+    }
+
+    .info {
+        margin-top: 15px;
+        text-align: center;
+        padding: 0 50px;
+        color: rgb(114, 114, 114);
+    }
+
+    .copyright {
+        margin-top: 15px;
+        color: rgb(114, 114, 114);
+    }
+
+
+    @include for-phone {
+        .navigation_list {
+            flex-direction: column;
+            text-align: center;
+            gap: 5px;
+        }
+        .copyright {
+            text-align: center;
+        }
+    }
+   
 }

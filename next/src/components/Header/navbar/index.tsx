@@ -2,17 +2,11 @@
 import React from 'react'
 import styles from './navbar.module.scss'
 import Link from 'next/link';
+import { menuList } from '@/constatnts/global';
 
-interface Props {
- 
-    menuList: {
-      id: number;
-      name: string,
-      href: string
-    }[]
-  }
 
-const Navbar : React.FC<Props> = ({menuList}) => {
+
+const Navbar : React.FC = () => {
 
 
 
