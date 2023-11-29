@@ -2,20 +2,13 @@ import React from 'react'
 import styles from './home.module.scss'
 import Carousel from '@/components/HomePage/carousel'
 import { CarouselItemData } from '@/interfaces/CarouselItems';
-import { getCarousel, getMetaData, getNewProducts } from '@/http/cmsAPI';
+import { getCarousel, getMetaData, getNewProducts } from '@/api/cmsAPI';
 import { Products } from '@/interfaces/Products';
 import ProductsSlider from '@/components/HomePage/productsSlider';
+import { pageMetadata } from '@/utils/pageMetadata';
 
 
- export const metadata = async () => {
-      const data = await getMetaData('home')
-       
-      return ({
-        title: data?.attributes.seo.title,
-        description: data?.attributes.seo.description
-      })
-}
-
+ export const metadata : Promise<{ title: string | undefined; description: string | undefined; }> = pageMetadata('home')
 
 
 

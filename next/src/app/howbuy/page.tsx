@@ -1,15 +1,16 @@
-import { getMetaData } from "@/http/cmsAPI";
+import { pageMetadata } from '@/utils/pageMetadata';
 import React from "react";
 import styles from "./howbuy.module.scss";
 
-export const metadata = async () => {
-  const data = await getMetaData("howbuy");
 
-  return {
-    title: data?.attributes.seo.title,
-    description: data?.attributes.seo.description,
-  };
-};
+
+
+export const metadata: Promise<{ title: string | undefined; description: string | undefined; }> = pageMetadata('howbuy')
+
+
+
+
+
 
 const Howbuy = () => {
   return (

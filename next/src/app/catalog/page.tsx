@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./catalog.module.scss";
-import { getGenres, getPlatforms, getProducts } from "@/http/cmsAPI";
+import { getGenres, getPlatforms, getProducts } from "@/api/cmsAPI";
 import ProductCard from "@/components/CatalogPage/productCard";
 import Genres from "@/components/CatalogPage/filters/categories/genres";
 import QueryBuilder from "@/components/CatalogPage/filters/queryBuilder";

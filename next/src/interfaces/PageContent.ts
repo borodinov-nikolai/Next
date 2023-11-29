@@ -1,6 +1,6 @@
 import { Meta } from "./Meta"
 
-export interface Content {
+export interface PageContent {
     data: Data
     meta: Meta
   }
@@ -14,12 +14,12 @@ export interface Content {
     createdAt: string
     updatedAt: string
     publishedAt: string
-    seo: Seo
+    meta: MetaData
   }
   
-  export interface Seo {
+  export interface MetaData {
     id: number
     title: string
     description: string
-    author: any
+    author: string
   }

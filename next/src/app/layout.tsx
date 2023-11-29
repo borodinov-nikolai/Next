@@ -1,10 +1,10 @@
 import Header from '@/components/Header'
 import { Inter } from 'next/font/google'
 import '../styles/global.scss'
-import StyledComponentsRegistry from '@/antDesign/AntdRegistry'
-import theme from '@/antDesign/themeConfig'
+import StyledComponentsRegistry from '@/libs/antDesign/AntdRegistry'
+import theme from '@/libs/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
-import ReduxProvider from '@/redux_toolkit/reduxProvider'
+import ReduxProvider from '@/store/reduxProvider'
 import Footer from '@/components/Footer'
 
 

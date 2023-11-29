@@ -1,4 +1,4 @@
-import { $digisellerAPI } from "@/axios/config"
+import { $digisellerAPI } from "@/libs/axios/config"
 
 
 

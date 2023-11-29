@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import styles from './mobile_genres.module.scss'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks';
-import { setGenre, setPlatform } from '@/redux_toolkit/slices/filtersSlice';
-import { setPage } from '@/redux_toolkit/slices/paginationSlice';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setGenre, setPlatform } from '@/store/slices/filtersSlice';
+import { setPage } from '@/store/slices/paginationSlice';
 import { GenreData } from '@/interfaces/Genres';
 
 

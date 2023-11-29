@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import {Input} from 'antd'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
-import { resetFilters, setSearch } from '@/redux_toolkit/slices/filtersSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { resetFilters, setSearch } from '@/store/slices/filtersSlice'
 import { useParams } from 'next/navigation'
-import { setPage } from '@/redux_toolkit/slices/paginationSlice'
+import { setPage } from '@/store/slices/paginationSlice'
 
 
 

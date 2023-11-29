@@ -1,9 +1,9 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/redux_toolkit/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import qs from "qs";
-import { resetFilters } from "@/redux_toolkit/slices/filtersSlice";
+import { resetFilters } from "@/store/slices/filtersSlice";
 import { useDebounce } from "usehooks-ts";
 import { DefaultValues } from "@/interfaces/App";
 

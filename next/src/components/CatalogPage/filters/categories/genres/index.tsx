@@ -2,9 +2,9 @@
 import React from 'react'
 import styles from './genres.module.scss'
 import { GenreData } from '@/interfaces/Genres'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
-import { setGenre } from '@/redux_toolkit/slices/filtersSlice'
-import { setPage } from '@/redux_toolkit/slices/paginationSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setGenre } from '@/store/slices/filtersSlice'
+import { setPage } from '@/store/slices/paginationSlice'
 
 
 interface Props {

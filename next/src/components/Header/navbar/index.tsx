@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from './navbar.module.scss'
 import Link from 'next/link';
-import { menuList } from '@/constatnts/global';
+import { MENU_LIST } from '@/constatnts/global';
 
 
 
@@ -15,7 +15,7 @@ const Navbar : React.FC = () => {
     <ul className={styles.root} >
          
     {
-      menuList.map(({id, name, href})=> {
+      MENU_LIST.map(({id, name, href})=> {
         return   (
           <li key={id} className={styles.item} ><Link href={href} > {name}</Link></li>
         )

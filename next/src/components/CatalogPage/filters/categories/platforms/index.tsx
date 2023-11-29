@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import styles from './platforms.module.scss'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks';
-import { setPlatform } from '@/redux_toolkit/slices/filtersSlice';
-import { setPage } from '@/redux_toolkit/slices/paginationSlice';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setPlatform } from '@/store/slices/filtersSlice';
+import { setPage } from '@/store/slices/paginationSlice';
 import { PlatformData } from '@/interfaces/Platforms';
 import Image from 'next/image';
 

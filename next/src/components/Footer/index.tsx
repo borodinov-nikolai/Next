@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './footer.module.scss'
-import { menuList } from '@/constatnts/global'
+import { MENU_LIST } from '@/constatnts/global'
 import Link from 'next/link'
 
 
@@ -11,7 +11,7 @@ const Footer = () => {
       
           <ul className={styles.navigation_list}>
             {
-              menuList.map(item => {
+              MENU_LIST.map(item => {
                   return (
                     <li className={styles.navigation_item} >
                         <Link key={item.id} href={item.href} >{item.name}</Link>

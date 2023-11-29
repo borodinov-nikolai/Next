@@ -1,6 +1,6 @@
 'use client'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks'
-import { setSort } from '@/redux_toolkit/slices/filtersSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setSort } from '@/store/slices/filtersSlice'
 import { Select } from 'antd'
 import React from 'react'
 

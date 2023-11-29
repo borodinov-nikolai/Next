@@ -2,8 +2,8 @@
 import React from 'react'
 import { Pagination } from 'antd';
 import styles from './pagination.module.scss'
-import { useAppDispatch, useAppSelector } from '@/redux_toolkit/hooks';
-import { setPage } from '@/redux_toolkit/slices/paginationSlice';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setPage } from '@/store/slices/paginationSlice';
 
 
 interface Props {
