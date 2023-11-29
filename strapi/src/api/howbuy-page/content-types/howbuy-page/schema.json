@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "seo": {
+    "meta": {
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"

@@ -754,12 +754,13 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'Home_page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    seo: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -790,7 +791,7 @@ export interface ApiHowbuyPageHowbuyPage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    seo: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
