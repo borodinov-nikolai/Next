@@ -7,15 +7,33 @@ import { Button} from 'antd'
 import { ProductData } from '@/interfaces/Products'
 import ImageGallery from '@/components/ProductPage/imageGallery.tsx'
 import { ProductInfo } from '@/interfaces/ProductInfo'
+import type { Metadata } from 'next'
 
 
+
+export async function generateMetadata(
+  { params }: {params: {product: string}}
+): Promise<Metadata> {
+  const id = params.product
+  const product = await getProduct(params.product)
+  return {
+    title: product?.attributes.name,
+    
+  }
+}
 
 const Product = async ({params}:{params:{product:string}}) => {
-
-     
+  
+  
   const product : ProductData | undefined = await getProduct(params.product)
   const productInfo : ProductInfo = await getProductInfo(product?.attributes.productID!)
   const price = Math.round(productInfo?.product.prices.default.RUB)
+
+
+
+ 
+
+
 
     if(!productInfo?.product?.is_available) {
              deleteProduct(params.product)
@@ -41,8 +59,8 @@ const Product = async ({params}:{params:{product:string}}) => {
       {productInfo && <ImageGallery productInfo={productInfo} />}
     </div>
     
-     <div className={styles.important_info} dangerouslySetInnerHTML={{ __html: productInfo?.product.add_info }}></div>
      <div className={styles.info} dangerouslySetInnerHTML={{ __html: productInfo?.product?.info }} />
+     <div className={styles.important_info} dangerouslySetInnerHTML={{ __html: productInfo?.product.add_info }}></div>
     </div>
   )
  } else {

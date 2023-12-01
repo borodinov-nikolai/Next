@@ -1,5 +1,5 @@
 import Header from '@/components/Header'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import '../styles/global.scss'
 import StyledComponentsRegistry from '@/libs/antDesign/AntdRegistry'
 import theme from '@/libs/antDesign/themeConfig'
@@ -8,7 +8,11 @@ import ReduxProvider from '@/store/reduxProvider'
 import Footer from '@/components/Footer'
 
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({
+  subsets: ['cyrillic'],
+  weight: '400',
+  display: 'swap'
+})
 
 
 
@@ -19,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.className} >
       
-      <body className={inter.className}>
+      <body >
         <ConfigProvider theme={theme} >
         <StyledComponentsRegistry>
           <ReduxProvider>

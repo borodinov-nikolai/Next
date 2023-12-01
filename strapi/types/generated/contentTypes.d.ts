@@ -711,6 +711,66 @@ export interface ApiCarouselItemCarouselItem extends Schema.CollectionType {
   };
 }
 
+export interface ApiCatalogPageCatalogPage extends Schema.SingleType {
+  collectionName: 'catalog_pages';
+  info: {
+    singularName: 'catalog-page';
+    pluralName: 'catalog-pages';
+    displayName: 'Catalog_page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    meta: Attribute.Component<'seo.meta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::catalog-page.catalog-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::catalog-page.catalog-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqPageFaqPage extends Schema.SingleType {
+  collectionName: 'faq_pages';
+  info: {
+    singularName: 'faq-page';
+    pluralName: 'faq-pages';
+    displayName: 'FAQ_page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    meta: Attribute.Component<'seo.meta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faq-page.faq-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGenreGenre extends Schema.CollectionType {
   collectionName: 'genres';
   info: {
@@ -895,6 +955,66 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductPageProductPage extends Schema.SingleType {
+  collectionName: 'product_pages';
+  info: {
+    singularName: 'product-page';
+    pluralName: 'product-pages';
+    displayName: 'Product_page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    meta: Attribute.Component<'seo.meta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWarrantyPageWarrantyPage extends Schema.SingleType {
+  collectionName: 'warranty_pages';
+  info: {
+    singularName: 'warranty-page';
+    pluralName: 'warranty-pages';
+    displayName: 'Warranty_page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    meta: Attribute.Component<'seo.meta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warranty-page.warranty-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warranty-page.warranty-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -912,11 +1032,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::carousel-item.carousel-item': ApiCarouselItemCarouselItem;
+      'api::catalog-page.catalog-page': ApiCatalogPageCatalogPage;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::genre.genre': ApiGenreGenre;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::howbuy-page.howbuy-page': ApiHowbuyPageHowbuyPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::product.product': ApiProductProduct;
+      'api::product-page.product-page': ApiProductPageProductPage;
+      'api::warranty-page.warranty-page': ApiWarrantyPageWarrantyPage;
     }
   }
 }

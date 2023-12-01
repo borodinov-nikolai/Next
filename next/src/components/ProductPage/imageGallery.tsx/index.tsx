@@ -26,7 +26,7 @@ interface Props {
 const ImageGallery: React.FC<Props> = ({productInfo}) => {
 const [currentImage, setCurrentImage] = useState<string>()
 
-console.log(productInfo)
+
 
  const defaultImage = productInfo?.product?.preview_imgs?.[1]?.url
 
