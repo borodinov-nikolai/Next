@@ -72,9 +72,9 @@ export const getProduct = async (id:string)=> {
     }
 }
 
-export const deleteProduct = async (id:string)=> {
+export const deleteProduct = (id:string)=> {
     try {
-        await $cmsAPI.delete(`/products/${id}`);
+      $cmsAPI.delete(`/products/${id}`);
     }catch(e) {
         console.error(e)
     }
@@ -98,4 +98,23 @@ export const getPlatforms = async ()=> {
     } catch(e) {
         console.error(e)
     }
+
+    
+}
+
+
+
+export const putPrice = (id: string, price: number)=> {
+    try {
+        $cmsAPI.put(`/products/${id}`, {
+            data: {
+                price : Number(price)
+            }
+        })
+       
+    } catch(e) {
+        console.error(e)
+    }
+
+    
 }

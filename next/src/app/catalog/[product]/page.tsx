@@ -1,5 +1,5 @@
 import { getProductInfo } from '@/api/digisellerAPI'
-import { deleteProduct, getProduct } from '@/api/cmsAPI'
+import { deleteProduct, getProduct, putPrice } from '@/api/cmsAPI'
 import React from 'react'
 import styles from './product.module.scss'
 import Link from 'next/link'
@@ -14,24 +14,27 @@ const Product = async ({params}:{params:{product:string}}) => {
 
      
   const product : ProductData | undefined = await getProduct(params.product)
-
-
   const productInfo : ProductInfo = await getProductInfo(product?.attributes.productID!)
+  const price = Math.round(productInfo?.product.prices.default.RUB)
 
     if(!productInfo?.product?.is_available) {
-      await deleteProduct(params.product)
+             deleteProduct(params.product)
+    }
+
+    if(price !== product?.attributes.price) {
+             putPrice(params.product, price ) 
     }
   
+  
 
-console.log(productInfo)
-
-
- if(productInfo?.product?.is_available){
+    
+    
+    if(productInfo?.product?.is_available){
   return (
     <div className={styles.root}>
       <h1 className={styles.name} >{productInfo.product.name}</h1>
       <div className={styles.buy_block} >
-        <div className={styles.price} >{product?.attributes.price}₽</div>
+        <div className={styles.price} >{price}₽</div>
         <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL!} >Купить</Link></Button></div>
       </div>
     <div className={styles.gallery} >

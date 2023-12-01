@@ -30,7 +30,7 @@
       "type": "string"
     },
     "price": {
-      "type": "integer"
+      "type": "decimal"
     },
     "genres": {
       "type": "relation",
