@@ -72,6 +72,14 @@ export const getProduct = async (id:string)=> {
     }
 }
 
+export const deleteProduct = async (id:string)=> {
+    try {
+        await $cmsAPI.delete(`/products/${id}`);
+    }catch(e) {
+        console.error(e)
+    }
+}
+
 
 export const getGenres = async()=> {
     try {

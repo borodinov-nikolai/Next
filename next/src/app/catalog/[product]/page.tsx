@@ -1,5 +1,5 @@
 import { getProductInfo } from '@/api/digisellerAPI'
-import { getProduct } from '@/api/cmsAPI'
+import { deleteProduct, getProduct } from '@/api/cmsAPI'
 import React from 'react'
 import styles from './product.module.scss'
 import Link from 'next/link'
@@ -17,6 +17,11 @@ const Product = async ({params}:{params:{product:string}}) => {
 
 
   const productInfo : ProductInfo = await getProductInfo(product?.attributes.productID!)
+
+    if(!productInfo?.product?.is_available) {
+      await deleteProduct(params.product)
+    }
+  
 
 console.log(productInfo)
 
