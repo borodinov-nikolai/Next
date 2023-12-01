@@ -41,7 +41,7 @@ const Product = async ({params}:{params:{product:string}}) => {
       {productInfo && <ImageGallery productInfo={productInfo} />}
     </div>
     
-    
+     <div className={styles.important_info} dangerouslySetInnerHTML={{ __html: productInfo?.product.add_info }}></div>
      <div className={styles.info} dangerouslySetInnerHTML={{ __html: productInfo?.product?.info }} />
     </div>
   )

@@ -11,10 +11,29 @@
    .new_title {
       margin-top: 50px;
       text-align: center;
-      font-size: 40px;
+      font-size: 30px;
    }
 
    
+   .catalog_btn {
+    
+      margin: 0 auto;
+      margin-top: 50px;
+      width: max-content;
+      height: max-content;
+
+      button {
+      
+         background-color: green;
+         height: max-content;
+         padding: 5px 40px;
+         font-size: 40px;
+
+         &:hover {
+            background-color: rgb(1, 167, 1) !important;
+         }
+      }
+   }
 
    .new_slider {
       margin-top: 50px;
@@ -22,6 +41,8 @@
   
 
    .info {
+      margin: 0 auto;
+      max-width: 800px;
       text-align: center;
   
       margin-top: 50px;
