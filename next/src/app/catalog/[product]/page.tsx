@@ -18,14 +18,17 @@ const Product = async ({params}:{params:{product:string}}) => {
 
   const productInfo : ProductInfo = await getProductInfo(product?.attributes.productID!)
 
-
+console.log(productInfo)
 
 
  if(productInfo?.product?.is_available){
   return (
     <div className={styles.root}>
       <h1 className={styles.name} >{productInfo.product.name}</h1>
-      <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL!} >Купить</Link></Button></div>
+      <div className={styles.buy_block} >
+        <div className={styles.price} >{product?.attributes.price}₽</div>
+        <div className={styles.buyBtn} ><Button size='large' type='primary' ><Link href={product?.attributes.buyURL!} >Купить</Link></Button></div>
+      </div>
     <div className={styles.gallery} >
       {productInfo && <ImageGallery productInfo={productInfo} />}
     </div>
@@ -35,7 +38,10 @@ const Product = async ({params}:{params:{product:string}}) => {
     </div>
   )
  } else {
-  return <div>товар закончился</div>
+  return <div className={styles.root} >
+    
+    <div className={styles.not_available} >Извините данный товар закончился!</div>
+    </div>
  }
   
 }
