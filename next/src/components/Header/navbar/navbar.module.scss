@@ -3,6 +3,7 @@
 
 
 .root {
+    height: 100%;
     align-items: end;
     display: flex;
     gap: 20px;
@@ -11,9 +12,37 @@
     .item {
         cursor: pointer;
         display: flex;
+        height: 100%;
         align-items: center;
-        height: 48px;
+        position: relative;
+        
+        &:hover::before {
+               content: '';
+               position: absolute;
+               top:0;
+               left: 0;
+               right: 0;
+               height: 2px;
+               background-color: black;
+               transition: height 0.3s ease;
+        }
+
+      
+        &__active {
+            &::before {
+                content: '';
+                position: absolute;
+                top:0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: black;
+                // transition: height 0.3s ease;
+            }
+          
+    }
     }
 
-   
+  
+  
 }

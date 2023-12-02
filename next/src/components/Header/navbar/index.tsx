@@ -3,13 +3,18 @@ import React from 'react'
 import styles from './navbar.module.scss'
 import Link from 'next/link';
 import { MENU_LIST } from '@/constatnts/global';
+import { usePathname } from 'next/navigation'
 
 
 
-const Navbar : React.FC = () => {
 
+
+const Navbar:React.FC = () => {
   
-  
+    
+  const pathName = usePathname();
+
+
   
 
 
@@ -20,7 +25,7 @@ const Navbar : React.FC = () => {
     {
       MENU_LIST.map(({id, name, href})=> {
         return   (
-          <li key={id} className={styles.item} ><Link href={href} > {name}</Link></li>
+          <Link href={href} key={id} className={[styles.item, pathName === href ? styles.item__active :''].filter(Boolean).join(' ')} ><li  > {name}</li></Link>
         )
       })
     }

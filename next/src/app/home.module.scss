@@ -23,14 +23,14 @@
       height: max-content;
 
       button {
-      
+         box-shadow: 10px 10px 5px  rgb(73, 73, 73);
          background-color: green;
          height: max-content;
          padding: 5px 40px;
          font-size: 40px;
 
          &:hover {
-            background-color: rgb(1, 167, 1) !important;
+            background-color: rgb(1, 163, 1) !important;
          }
       }
    }
