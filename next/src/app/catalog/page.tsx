@@ -22,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getMetaData('catalog')
   return {
     title: data?.attributes?.meta?.title,
+    description: data?.attributes?.meta?.description
     }
 }
 

@@ -6,7 +6,8 @@ import theme from '@/libs/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
 import ReduxProvider from '@/store/reduxProvider'
 import Footer from '@/components/Footer'
-import Script from 'next/script';
+import Scripts from '@/components/Scripts'
+
 
 const roboto = Roboto({
   subsets: ['cyrillic'],
@@ -23,17 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={roboto.className} >
-      <Script strategy='lazyOnload' src={"https://www.googletagmanager.com/gtag/js?id=G-MTLEE81PSW"}/>
-      <Script strategy='lazyOnload' id="gtag" >
-        {
-          `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-MTLEE81PSW')`
-        }
-      </Script>
+    <html lang="ru" className={roboto.className} >
+    <Scripts/>
       <body >
         <ConfigProvider theme={theme} >
         <StyledComponentsRegistry>

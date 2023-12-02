@@ -18,6 +18,7 @@ export async function generateMetadata(
   const product = await getProduct(params.product)
   return {
     title: product?.attributes.name,
+    description: "Купить " + product?.attributes.name
     
   }
 }

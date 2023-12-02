@@ -11,7 +11,7 @@ interface Props {
 
 const ProductsSlider: React.FC<Props> = ({products}) => {
   
-const [state, setState] = useState<number>()
+
 const data = [...products.data,...products.data,...products.data]
 
     

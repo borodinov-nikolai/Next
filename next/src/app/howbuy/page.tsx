@@ -10,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getMetaData('howbuy')
   return {
     title: data?.attributes?.meta?.title,
+    description: data?.attributes?.meta?.description
     }
 }
 

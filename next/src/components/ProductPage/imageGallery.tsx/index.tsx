@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './imageGallery.module.scss'
 import { Image } from 'antd'
 import NextImage  from 'next/image';
@@ -35,8 +35,7 @@ const [currentImage, setCurrentImage] = useState<string>()
    return (
     <div className={styles.root} >
 
-    <div className={styles.image}> <Image  src={currentImage || defaultImage}/> </div>
-     {/* <div className={styles.previewsHolder}> */}
+    <div className={styles.image}> <Image  src={currentImage || defaultImage} alt={productInfo.product.name} /> </div>
      <Swiper
                slidesPerView={'auto'}
                spaceBetween={10}
@@ -60,7 +59,7 @@ const [currentImage, setCurrentImage] = useState<string>()
           return (<SwiperSlide onClick={()=> setCurrentImage(url)} key={id} 
       
           className={[styles.preview, previewChanged].filter(Boolean).join(' ')} >
-              <NextImage  src={url} height={200} width={400} quality={70} alt='preview'></NextImage> 
+              <NextImage  src={url} height={200} width={400} quality={70} alt={productInfo.product.name +' preview'}></NextImage> 
           </SwiperSlide>)
         })
        }
