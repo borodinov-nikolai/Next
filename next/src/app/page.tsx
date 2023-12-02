@@ -39,6 +39,8 @@ const Home = async () => {
        </div>
        <div className={styles.new_title} >Новое на сайте:</div>
          <div className={styles.new_slider}>{ newProducts && <ProductsSlider products={ newProducts} />}</div>
+
+
        <div className={styles.info} >
        <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
         <div className={styles.info_text}>
@@ -48,10 +50,8 @@ const Home = async () => {
           
           Не упустите возможность приобрести качественные цифровые товары и активации по выгодным ценам.
         </div>
-               <div className={styles.catalog_btn}><Link href={'/catalog'} ><Button  type={'primary'} > Перейти в каталог</Button></Link></div>
+               
        </div>
-
-
     </div>
   )
 }
