@@ -7,7 +7,7 @@ import { Products } from '@/interfaces/Products';
 import ProductsSlider from '@/components/HomePage/productsSlider';
 import { Metadata } from 'next';
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
  
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getMetaData('home')
