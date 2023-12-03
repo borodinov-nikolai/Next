@@ -20,6 +20,7 @@ export interface CarouselItemAttributes {
   publishedAt: string
   name: string
   price: number
+  productID: number
   desktop_image: Image
   mobile_image: Image
 }

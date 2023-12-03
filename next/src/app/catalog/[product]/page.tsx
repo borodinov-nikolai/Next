@@ -9,7 +9,7 @@ import ImageGallery from '@/components/ProductPage/imageGallery.tsx'
 import { ProductInfo } from '@/interfaces/ProductInfo'
 import type { Metadata } from 'next'
 
-
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(
   { params }: {params: {product: string}}

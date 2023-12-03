@@ -50,7 +50,7 @@ const Carousel: React.FC<Props> = ({ data }) => {
 
           return (
             <div key={item.id} className={styles.item} >
-              <Link href='/catalog/1'>
+              <Link href={`/catalog/${attributes.productID}`}>
                 <div className={styles.image} >
                   <Image className={styles.img_desktop} src={imageURL + desktop_image} width={4000} height={4000} alt={attributes.name}></Image>
                   <Image className={styles.img_mobile} src={imageURL + mobile_image} width={4000} height={4000} alt={attributes.name}></Image>

@@ -18,9 +18,7 @@ const Sort = ({defaultValue}:{defaultValue:string|undefined}) => {
     onChange={(e)=> dispatch(setSort(e))}
     options={[
       { value: 'price:asc', label: 'Цена по возрастанию' },
-      { value: 'price:desc', label: 'Цена по убыванию' },
-      { value: 'rating:asc', label: 'Рейтинг по возрастанию' },
-      { value: 'rating:desc', label: 'Рейтинг по убыванию' },
+      { value: 'price:desc', label: 'Цена по убыванию' }
     ]}
   />
   )

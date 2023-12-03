@@ -35,6 +35,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "productID": {
+      "type": "integer",
+      "required": true
     }
   }
 }

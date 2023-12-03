@@ -693,6 +693,7 @@ export interface ApiCarouselItemCarouselItem extends Schema.CollectionType {
     price: Attribute.Integer & Attribute.Required;
     desktop_image: Attribute.Media & Attribute.Required;
     mobile_image: Attribute.Media & Attribute.Required;
+    productID: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
