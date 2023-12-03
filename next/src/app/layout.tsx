@@ -6,7 +6,7 @@ import theme from '@/libs/antDesign/themeConfig'
 import {ConfigProvider} from 'antd'
 import ReduxProvider from '@/store/reduxProvider'
 import Footer from '@/components/Footer'
-import Scripts from '@/components/Scripts'
+// import Scripts from '@/components/Scripts'
 
 
 const roboto = Roboto({
@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={roboto.className} >
-    <Scripts/>
+    {/* <Scripts/> */}
       <body >
         <ConfigProvider theme={theme} >
         <StyledComponentsRegistry>
