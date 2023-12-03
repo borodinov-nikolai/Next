@@ -15,7 +15,7 @@ const nextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'api.petproekt.ru',
+            hostname: 'api.activationstore.ru',
             pathname: '/**',
           },
           {
