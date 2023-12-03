@@ -22,7 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getMetaData('catalog')
   return {
     title: data?.attributes?.meta?.title,
-    description: data?.attributes?.meta?.description
+    description: data?.attributes?.meta?.description,
+    keywords: "STARFIELD, Mortal Kombat 1, Minecraft, Assassins Creed Mirage, Alan Wake 2, Marvels Spider-Man 2, Lies of P, PAYDAY 3, оффлайн активация, offline activation, denuvo, crack, repack, autoactivation, forza horizon 5, microsoft store"
     }
 }
 

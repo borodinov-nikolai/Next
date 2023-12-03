@@ -5,8 +5,6 @@ import { CarouselItemData } from '@/interfaces/CarouselItems';
 import { getCarousel, getMetaData, getNewProducts } from '@/api/cmsAPI';
 import { Products } from '@/interfaces/Products';
 import ProductsSlider from '@/components/HomePage/productsSlider';
-import { Button } from 'antd';
-import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const dynamic = "force-dynamic";
@@ -15,7 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getMetaData('home')
   return {
     title: data?.attributes?.meta?.title,
-    description: data?.attributes?.meta?.description
+    description: data?.attributes?.meta?.description,
+    keywords: "STARFIELD, Mortal Kombat 1, Minecraft, Assassins Creed Mirage, Alan Wake 2, Marvels Spider-Man 2, Lies of P, PAYDAY 3, оффлайн активация, offline activation, denuvo, crack, repack, autoactivation, forza horizon 5, microsoft store"
     }
 }
 
@@ -43,7 +42,7 @@ const Home = async () => {
 
 
        <div className={styles.info} >
-       <h1 className={styles.info_title} >Добро пожаловать на petproekt.store</h1>
+       <h1 className={styles.info_title} >Добро пожаловать на activationstore.ru</h1>
         <div className={styles.info_text}>
            Ваш идеальный партнер для приобретения оффлайн и онлайн активаций в сервисах Steam, Microsoft Store, Epic Games Store, Ubisoft Connect и многих других. Мы специализируемся на продаже различных цифровых товаров, включая аккаунты, лицензионные ключи для Steam, Windows и многое другое.
           

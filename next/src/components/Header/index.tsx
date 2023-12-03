@@ -32,7 +32,7 @@ const Header = () => {
       
           <Link className={styles.logo} href='/' >
             <Image className={styles.logo_image} src={logo} height={50} width={50} alt='logo' />
-            <p className={styles.logo_text} >petproekt.store</p>
+            <p className={styles.logo_text} >activationstore.ru</p>
           </Link>
  
 

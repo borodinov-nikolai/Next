@@ -14,12 +14,11 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(
   { params }: {params: {product: string}}
 ): Promise<Metadata> {
-  const id = params.product
   const product = await getProduct(params.product)
   return {
     title: product?.attributes.name,
-    description: "Купить " + product?.attributes.name
-    
+    description: "Купить " + product?.attributes.name,
+    keywords: product?.attributes.name
   }
 }
 
