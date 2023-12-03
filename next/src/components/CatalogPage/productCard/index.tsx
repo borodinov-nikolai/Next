@@ -29,11 +29,11 @@ const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution})
     <div title={attributes.productName} className={[styles.root, styles[size]].join(' ')}>
      <Link href={`/catalog/${product.id}`}>
       <div className={styles.image}>
-       { imageURL && <Image loading={'eager'} src={cmsURL + imageURL}
+       { imageURL && <Image src={cmsURL + imageURL}
         width={imageResolution?.width || 200} height={imageResolution?.height || 300} quality={80} alt={attributes.name}></Image>}
       </div>
       <div className={styles.platform_icon}>
-        {iconURL && <Image loading={'eager'} src={cmsURL + iconURL} height={50} width={50} alt={attributes.name + " icon"}/>}
+        {iconURL && <Image src={cmsURL + iconURL} height={50} width={50} alt={attributes.name + " icon"}/>}
 
       </div>
   
