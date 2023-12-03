@@ -30,7 +30,7 @@ const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution})
      <Link href={`/catalog/${product.id}`}>
       <div className={styles.image}>
        { imageURL && <Image src={cmsURL + imageURL}
-        width={imageResolution?.width || 400} height={imageResolution?.height || 400} quality={80} alt={attributes.name}></Image>}
+        width={imageResolution?.width || 200} height={imageResolution?.height || 300} quality={80} alt={attributes.name}></Image>}
       </div>
       <div className={styles.platform_icon}>
         {iconURL && <Image src={cmsURL + iconURL} height={50} width={50} alt={attributes.name + " icon"}/>}
