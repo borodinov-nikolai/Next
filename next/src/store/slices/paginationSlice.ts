@@ -13,7 +13,7 @@ interface Pagination {
 
 const initialState : Pagination = {
     page: null,
-    pageSize: 25
+    pageSize: 24
 }
 
 

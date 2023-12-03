@@ -28,7 +28,7 @@ const [currentImage, setCurrentImage] = useState<string>()
 
 
 
- const defaultImage = productInfo?.product?.preview_imgs?.[1]?.url
+ const defaultImage = productInfo?.product?.preview_imgs?.[0]?.url
 
 
 
@@ -54,7 +54,7 @@ const [currentImage, setCurrentImage] = useState<string>()
                className={ [styles.swiper, "mySwiper"].join(' ')}
       > 
      
-       { productInfo?.product?.preview_imgs?.slice(1).map(({id, url}:{id: number,url:string})=>{
+       { productInfo?.product?.preview_imgs?.map(({id, url}:{id: number,url:string})=>{
             const previewChanged = currentImage === url ? styles.preview__changed: defaultImage === url && !currentImage ? styles.preview__changed:'';
           return (<SwiperSlide onClick={()=> setCurrentImage(url)} key={id} 
       
