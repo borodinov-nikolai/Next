@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import { Carousel as CarouselAntd } from 'antd';
 import Image from 'next/image';

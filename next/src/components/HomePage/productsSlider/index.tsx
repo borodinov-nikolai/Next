@@ -1,5 +1,4 @@
-'use client';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from './productsSlider.module.scss'
 import { Products } from '@/interfaces/Products'
 import ProductCard from '@/components/CatalogPage/productCard'
@@ -28,7 +27,7 @@ const data = [...products.data,...products.data,...products.data]
           {
            products && data.map((product, index)=> {
              return (
-               <ProductCard key={index} product={product} size='medium' imageResolution={{height:500, width:500}} />
+               <ProductCard key={index} product={product} size='medium' />
              )
            })
           }
