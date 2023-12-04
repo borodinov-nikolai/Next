@@ -1,4 +1,3 @@
-'use client';
 import React from 'react'
 import styles from './productCard.module.scss'
 import Image from 'next/image'
@@ -33,7 +32,7 @@ const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution})
         width={imageResolution?.width || 200} height={imageResolution?.height || 300} quality={80} alt={attributes.name}></Image>}
       </div>
       <div className={styles.platform_icon}>
-        {iconURL && <Image src={cmsURL + iconURL} height={50} width={50} alt={attributes.name + " icon"}/>}
+        {iconURL && <Image src={cmsURL + iconURL} height={40} width={40} alt={attributes.name + " icon"}/>}
 
       </div>
   
