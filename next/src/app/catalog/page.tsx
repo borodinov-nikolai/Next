@@ -14,7 +14,7 @@ import Platforms from "@/components/CatalogPage/filters/categories/platforms";
 import Mobile_category from "@/components/CatalogPage/filters/mobile_categories";
 import { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 
 
