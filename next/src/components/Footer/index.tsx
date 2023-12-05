@@ -21,10 +21,10 @@ const Footer = () => {
             }
           </ul>
 
-          <div className={styles.support} >Поддержка: support@petproekt.ru</div>
+          <div className={styles.support} >Поддержка: support@activationstore.ru</div>
           <div className={styles.info} > Все упомянутые товарные знаки, названия игр и компаний, логотипы, материалы являются собственностью
           соответсвующих владельцев  </div>
-          <div className={styles.copyright}> 2023 © - petproekt.ru </div>
+          <div className={styles.copyright}> 2023 © - activationstore.ru </div>
   
       </div>
 
