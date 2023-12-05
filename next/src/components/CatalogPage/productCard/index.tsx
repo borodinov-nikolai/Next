@@ -20,7 +20,8 @@ const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution})
   const cmsURL =  process.env.NEXT_PUBLIC_CMS_IMG_URL
   const attributes = product.attributes
   const imageURL = attributes.image?.data.attributes.url
-  const iconURL = attributes.platform?.data.attributes.icon?.data.attributes.url
+  const imageSmall = attributes.image?.data.attributes.formats.small?.url
+  const iconURL = attributes.platform?.data.attributes.icon?.data.attributes.formats.thumbnail?.url
   
   
   
@@ -28,7 +29,7 @@ const ProductCard: React.FC<Props> = ({product, size='medium', imageResolution})
     <div title={attributes.productName} className={[styles.root, styles[size]].join(' ')}>
      <Link href={`/catalog/${product.id}`}>
       <div className={styles.image}>
-       { imageURL && <Image src={cmsURL + imageURL}
+       { imageURL && <Image src={cmsURL + (imageSmall || imageURL)}
         width={imageResolution?.width || 200} height={imageResolution?.height || 300} quality={80} alt={attributes.name}></Image>}
       </div>
       <div className={styles.platform_icon}>
