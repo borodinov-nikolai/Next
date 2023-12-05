@@ -44,7 +44,7 @@ const Carousel: React.FC<Props> = ({ data }) => {
         data.map((item) => {
           const imageURL = process.env.NEXT_PUBLIC_CMS_IMG_URL
           const attributes = item.attributes
-          const desktop_image = item.attributes.desktop_image.data.attributes?.formats.large.url
+          const desktop_image = item.attributes.desktop_image.data.attributes?.url
           const mobile_image = item.attributes.mobile_image.data.attributes?.url
           const mobile_image_medium = item.attributes.mobile_image.data.attributes.formats.medium?.url
     
