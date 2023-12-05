@@ -38,7 +38,7 @@ const Catalog = async ({
   const queryString = qs.stringify(searchParams);
 
   const products = await getProducts(queryString);
-  console.log(products)
+
   const platforms = await getPlatforms();
   const genres = await getGenres();
 
