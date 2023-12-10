@@ -18,6 +18,7 @@ export interface CarouselItemAttributes {
   createdAt: string
   updatedAt: string
   publishedAt: string
+  priority: boolean
   name: string
   price: number
   productID: number
